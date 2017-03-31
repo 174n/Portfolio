@@ -3,7 +3,7 @@
   "short_name": "C-Test",
   "lang": "de",
   "start_url": "https://rundik.github.io/projects/c-test/",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#CCC",
  "icons": [
   {
