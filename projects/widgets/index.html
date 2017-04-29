@@ -318,6 +318,12 @@ $('.settings-btn').click(function(){
         e.preventDefault();
       }
     });
+    
+		$('.settings textarea').on('touchstart', function() {
+				timeoutId = setTimeout(updateSettings, 1000);
+		}).on('mouseup touchend', function() {
+				clearTimeout(timeoutId);
+		});
   }
   
 });
