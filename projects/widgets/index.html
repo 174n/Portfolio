@@ -4,7 +4,26 @@
   <meta charset="UTF-8">
   <title>Browser Widgets</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
   
+  <link rel="shortcut icon" href="icons/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
+  
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="Browser Widgets">
+  <meta name="apple-mobile-web-app-title" content="Browser Widgets">
+  <meta name="theme-color" content="#222222">
+  <meta name="msapplication-navbutton-color" content="#222222">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-starturl" content="https://rundik.github.io/projects/widgets/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/192x192.png">
+  <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="icons/192x192.png">
+
   <style>
 
 /* cyrillic-ext */
@@ -167,38 +186,38 @@ body {
 <body translate="no">
 
   <div class="teamples">
-	
-	<!-- ITEM -->
-	<div class="widget">
-		<div class="close">
-			<svg viewbox="0 0 40 40">
-				<path class="close-x" d="M 10,10 L 30,30 M 30,10 L 10,30" />
-			</svg>
-		</div>
-		<div class="header"></div>
-		<div class="content">
-		</div>
-	</div>
-	
-	<!-- MESSANGE -->
-	<div class="msg" onclick="$(this).remove()">
-		<div class="header"></div>
-		<div class="content"></div>
-	</div>
-	
-	<!-- SETTINGS -->
-	<div class="settings">
-		<textarea>{}</textarea>
-	</div>
-	
-	
+  
+  <!-- ITEM -->
+  <div class="widget">
+    <div class="close">
+      <svg viewbox="0 0 40 40">
+        <path class="close-x" d="M 10,10 L 30,30 M 30,10 L 10,30" />
+      </svg>
+    </div>
+    <div class="header"></div>
+    <div class="content">
+    </div>
+  </div>
+  
+  <!-- MESSANGE -->
+  <div class="msg" onclick="$(this).remove()">
+    <div class="header"></div>
+    <div class="content"></div>
+  </div>
+  
+  <!-- SETTINGS -->
+  <div class="settings">
+    <textarea>{}</textarea>
+  </div>
+  
+  
 </div>
 
 <div class="container"></div>
 
 
 <div class="settings-btn">
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <path d="M233.4.8c-27.8 2.5-55 9-80 20 16.5 35 15.3 71-7 87.7C124 125 88.7 117 59.8 91.8c-17.3 20.7-31.3 44-41.5 70 36 13 60.5 40 56.5 67.5s-35 46.6-73.2 49C4 306 11 332.4 21.8 357c19-8.7 38.2-11.8 54.5-9.5 14 2 25.5 7.5 33.3 17.7 16.8 22.5 8 58.3-18 87.3 21 17.4 45 31.4 71 41.6 13.3-36 40.3-60.2 68-56.3 27.4 4 46.5 34.8 49 73 28-2.4 55-9 80-20-17-35-15.3-72 7.2-88.7 10.3-7.7 24-9.6 38-7.6 16 2.3 33.3 11 48.6 24.2 17.2-20.5 31.4-44 41.5-69.8-36.2-13-60.5-40-56.6-67.6 4-27.5 35-46.6 73.2-49-2.5-27.7-9.4-54-20.2-78.8-34.8 16-71 14-87.8-8C387 123 396 87.8 421.4 59c-20.8-17.4-45-31.3-71-41.5-13.2 36-40.2 60.3-67.8 56.3C255 69.8 236 39 233.4.8zm23 101.3c85 0 154.2 69 154.2 153.8 0 84.8-69 153.7-154 153.7s-154-69-154-153.7c0-84.8 69-153.7 154-153.7zm0 20c-74 0-134 59.8-134 133.8 0 74 60 133.8 134 133.8 74.3 0 134.2-59.8 134.2-133.8 0-74-60-133.8-134-133.8zm.2 16c65 0 118 52.8 118 117.8s-53 117.8-118 117.8-118-52.7-118-117.8c0-65 52.8-117.7 118-117.7z"/>
 </svg>
 </div>
@@ -209,143 +228,143 @@ body {
 var config,storage;
 
 function addItem(header, content, grow, order){
-	var widget = $('.teamples .widget').clone();
-	widget.find('.header').html(header);
-	widget.find('.content').html(content);
-	if(grow > 1) widget.css('width',250*grow);
-	if(order !== undefined) widget.css('order',order);
-	$('.container').append(widget);
-	
-	$('.close').on("click", function(){
-		$(this).parent().remove();
-	});
+  var widget = $('.teamples .widget').clone();
+  widget.find('.header').html(header);
+  widget.find('.content').html(content);
+  if(grow > 1) widget.css('width',250*grow);
+  if(order !== undefined) widget.css('order',order);
+  $('.container').append(widget);
+  
+  $('.close').on("click", function(){
+    $(this).parent().remove();
+  });
 }
 
 function addMsg(header, content, color){
-	var msg = $('.teamples .msg').clone();
-	msg.find('.header').html(header);
-	msg.find('.content').html(content);
-	msg.addClass('color-'+color);
-	msg.css('display','none').slideDown("slow",function(){
-		var elem = $(this);
-		setTimeout(function(){
-  		elem.slideUp("slow");
-		}, 2000);
-	});
-	
-	$('body').append(msg);
+  var msg = $('.teamples .msg').clone();
+  msg.find('.header').html(header);
+  msg.find('.content').html(content);
+  msg.addClass('color-'+color);
+  msg.css('display','none').slideDown("slow",function(){
+    var elem = $(this);
+    setTimeout(function(){
+      elem.slideUp("slow");
+    }, 2000);
+  });
+  
+  $('body').append(msg);
 }
 function loadScript(url){
-	loadData(url,function(data){
-		eval(data);
-	});
+  loadData(url,function(data){
+    eval(data);
+  });
 }
 
 function loadData(url,res){
-	$.get(url, function(data){
-				res(data);
-		})
-		.fail(function() {
-			addMsg('','Triggered ajaxError handler.',1);
-		});
+  $.get(url, function(data){
+        res(data);
+    })
+    .fail(function() {
+      addMsg('','Triggered ajaxError handler.',1);
+    });
 }
 
 function updateData(url,json,res){
-	$.ajax({
-		url: url,
-		type:"PUT",
-		data:JSON.stringify(json),
-		contentType:"application/json; charset=utf-8",
-		dataType:"json",
-		success: function(data, textStatus, jqXHR){
-			res(data, textStatus, jqXHR)
-		}
-	});
+  $.ajax({
+    url: url,
+    type:"PUT",
+    data:JSON.stringify(json),
+    contentType:"application/json; charset=utf-8",
+    dataType:"json",
+    success: function(data, textStatus, jqXHR){
+      res(data, textStatus, jqXHR)
+    }
+  });
 }
 
 function loadPlugins(){
-	loadData(localStorage.getItem("dataurl"),function(data){
-		$('.widget:not(.widget:has(> .content .settings)):visible').remove();
-		config = data.settings;
-		storage = data.storage;
-		$.each(data.plugins, function(i,val) {
-			if(!val.hidden) loadScript((val.private ? data.private : '')+val.url);
-		});
-	});
+  loadData(localStorage.getItem("dataurl"),function(data){
+    $('.widget:not(.widget:has(> .content .settings)):visible').remove();
+    config = data.settings;
+    storage = data.storage;
+    $.each(data.plugins, function(i,val) {
+      if(!val.hidden) loadScript((val.private ? data.private : '')+val.url);
+    });
+  });
 }
 loadPlugins();
 
 
 
 $('.settings-btn').click(function(){
-	var settings = $('.teamples .settings').clone();
-	if ($(".settings").length<=1){
-		addItem('Settings', settings,2,-1);
-		var url = localStorage.getItem("dataurl");
-		
-		if(url===null){
-			 $(".settings textarea").val(JSON.stringify({"dataurl":""},null,'\t'));
-		}
-		else{
-			loadData(url,function(data){
-				var json = $.extend({}, data, {"dataurl":url});
-				$(".settings textarea")[1].value = JSON.stringify(json,null,'\t');
-			});
-		}
-		
-		$(".settings textarea").on('keydown', function(e){
-			if(e.ctrlKey && e.which === 83){
-				updateSettings();
-				e.preventDefault();
-			}
-		});
-	}
-	
+  var settings = $('.teamples .settings').clone();
+  if ($(".settings").length<=1){
+    addItem('Settings', settings,2,-1);
+    var url = localStorage.getItem("dataurl");
+    
+    if(url===null){
+       $(".settings textarea").val(JSON.stringify({"dataurl":""},null,'\t'));
+    }
+    else{
+      loadData(url,function(data){
+        var json = $.extend({}, data, {"dataurl":url});
+        $(".settings textarea")[1].value = JSON.stringify(json,null,'\t');
+      });
+    }
+    
+    $(".settings textarea").on('keydown', function(e){
+      if(e.ctrlKey && e.which === 83){
+        updateSettings();
+        e.preventDefault();
+      }
+    });
+  }
+  
 });
 
 function updateSettings(){
-	var json = $.parseJSON($(".settings textarea")[1].value);
-	
-	if(json.dataurl){
-		
-		loadData(json.dataurl,function(data){
-			if(json.plugins === undefined){
-				json = $.extend({}, data, json);
-				$(".settings textarea")[1].value = JSON.stringify(json,null,'\t');
-				localStorage.setItem("dataurl",json.dataurl);
-				addMsg('','Settings loaded',2);
-				loadPlugins();
-			}
-			else{
-				updateData(json.dataurl,json,function(data, textStatus, jqXHR){
-					addMsg('','Settings updated',2);
-					localStorage.setItem("dataurl",json.dataurl);
-					$(".settings textarea")[1].value = JSON.stringify(json,null,'\t');
-					loadPlugins();
-				});
-				
-			}
-		});
-		
-	}
-	else{
-		localStorage.removeItem("dataurl");
-		$(".settings textarea").val(JSON.stringify({"dataurl":""},null,'\t'));
-		addMsg('','Data URL removed',4);
-		loadPlugins();
-	}
+  var json = $.parseJSON($(".settings textarea")[1].value);
+  
+  if(json.dataurl){
+    
+    loadData(json.dataurl,function(data){
+      if(json.plugins === undefined){
+        json = $.extend({}, data, json);
+        $(".settings textarea")[1].value = JSON.stringify(json,null,'\t');
+        localStorage.setItem("dataurl",json.dataurl);
+        addMsg('','Settings loaded',2);
+        loadPlugins();
+      }
+      else{
+        updateData(json.dataurl,json,function(data, textStatus, jqXHR){
+          addMsg('','Settings updated',2);
+          localStorage.setItem("dataurl",json.dataurl);
+          $(".settings textarea")[1].value = JSON.stringify(json,null,'\t');
+          loadPlugins();
+        });
+        
+      }
+    });
+    
+  }
+  else{
+    localStorage.removeItem("dataurl");
+    $(".settings textarea").val(JSON.stringify({"dataurl":""},null,'\t'));
+    addMsg('','Data URL removed',4);
+    loadPlugins();
+  }
 }
 
 
 function instorage(plugin,obj){
-	if(obj !== undefined){
-		var url = localStorage.getItem("dataurl");
-		loadData(url, function(data){
-			data.storage[plugin] = obj;
-			updateData(url,data,function(){});
-		});
-	}
-	else return storage[plugin];
+  if(obj !== undefined){
+    var url = localStorage.getItem("dataurl");
+    loadData(url, function(data){
+      data.storage[plugin] = obj;
+      updateData(url,data,function(){});
+    });
+  }
+  else return storage[plugin];
 }
   </script>
 
