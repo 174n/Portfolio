@@ -206,7 +206,7 @@ body {
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 
     <script>
-var config;
+var config,storage;
 
 function addItem(header, content, grow, order){
 	var widget = $('.teamples .widget').clone();
@@ -267,6 +267,7 @@ function loadPlugins(){
 	loadData(localStorage.getItem("dataurl"),function(data){
 		$('.widget:not(.widget:has(> .content .settings)):visible').remove();
 		config = data.settings;
+		storage = data.storage;
 		$.each(data.plugins, function(i,val) {
 			if(!val.hidden) loadScript((val.private ? data.private : '')+val.url);
 		});
@@ -322,6 +323,7 @@ function updateSettings(){
 					$(".settings textarea")[1].value = JSON.stringify(json,null,'\t');
 					loadPlugins();
 				});
+				
 			}
 		});
 		
@@ -332,6 +334,18 @@ function updateSettings(){
 		addMsg('','Data URL removed',4);
 		loadPlugins();
 	}
+}
+
+
+function instorage(plugin,obj){
+	if(obj !== undefined){
+		var url = localStorage.getItem("dataurl");
+		loadData(url, function(data){
+			data.storage[plugin] = obj;
+			updateData(url,data,function(){});
+		});
+	}
+	else return storage[plugin];
 }
   </script>
 
