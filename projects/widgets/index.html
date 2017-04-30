@@ -313,18 +313,8 @@ $('.settings-btn').click(function(){
       });
     }
     
-    $(".settings textarea").on('keydown', function(e){
-      if(e.ctrlKey && e.which === 83){
-        updateSettings();
-        e.preventDefault();
-      }
-    });
+    ctrlS($(".settings textarea"),function(){updateSettings();});
     
-		$('.settings textarea').on('touchstart', function() {
-				timeoutId = setTimeout(updateSettings, 1000);
-		}).on('mouseup touchend', function() {
-				clearTimeout(timeoutId);
-		});
   }
   
 });
@@ -372,6 +362,22 @@ function instorage(plugin,obj){
     });
   }
   else return storage[plugin];
+}
+	    
+
+function ctrlS(obj,func){
+	obj.on('keydown', function(e){
+		if(e.ctrlKey && e.which === 83){
+			func();
+			e.preventDefault();
+		}
+	});
+	var timeoutId;
+	obj.on('touchstart', function() {
+			timeoutId = setTimeout(func, 1000);
+	}).on('mouseup touchend', function() {
+			clearTimeout(timeoutId);
+	});
 }
   </script>
 
