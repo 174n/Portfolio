@@ -1,0 +1,208 @@
+
+
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Frontend Playground</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.2/codemirror.min.css'>
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.2/theme/monokai.min.css'>
+
+      <style>
+      .buttons {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  z-index: 100500;
+}
+.buttons button {
+  flex-grow: 1;
+  border: 0;
+  padding: 5px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.playground > div {
+  position: absolute;
+  width: 100%;
+  visibility: hidden;
+}
+.playground > div .CodeMirror {
+  height: calc(100vh - 35px);
+}
+.playground > div .CodeMirror .CodeMirror-gutters {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#output {
+  visibility: hidden;
+  height: calc(100vh - 35px);
+}
+#output iframe {
+  width: 100%;
+  height: 100%;
+}
+
+    </style>
+
+  
+  
+  
+  
+</head>
+
+<body translate="no" >
+
+  <div class="playground">
+  <div id="html" class="editor"></div>
+  <div id="css" class="editor"></div>
+  <div id="js" class="editor"></div>
+  <div id="output"><iframe frameborder="0"></iframe></div>
+  <div id="settings"></div>
+  
+</div>
+
+<div class="buttons">
+  <button data-target="html">html</button>
+  <button data-target="css">css</button>
+  <button data-target="js">js</button>
+  <button data-target="output">output</button>
+  <button data-target="settings">Settings</button>
+</div>
+  
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.2/codemirror.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.2/mode/javascript/javascript.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.2/mode/css/css.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.2/mode/xml/xml.min.js'></script>
+<script src='https://cdn.rawgit.com/emmetio/codemirror/7da965f3/dist/emmet.js'></script>
+
+    <script>
+    var tabs=[];
+$.each($(".buttons button"), function(i, elem){
+  tabs.push($(elem).attr("data-target"));
+})
+
+function createEditor(id,params){
+  return CodeMirror($('#'+id)[0], Object.assign({
+    lineNumbers: true,
+    theme: "monokai",
+    tabSize: 2
+  },params));
+}
+var html_editor = createEditor("html",{
+  mode: "xml",
+  htmlMode: true,
+  value:"<div class='class'>test</div>"
+});
+var css_editor = createEditor("css",{
+  mode: "css",
+  value:".class {color: red;}"
+});
+var js_editor = createEditor("js",{
+  mode: "javascript",
+  value:""
+});
+
+emmetCodeMirror(html_editor);
+emmetCodeMirror(css_editor);
+emmetCodeMirror(js_editor);
+
+
+function showBlock(id){
+  $(".buttons button").css("background-color","#ccc");
+  $(".buttons button[data-target="+id+"]").css("background-color","#eee");
+  $(".playground>div").css("visibility","hidden");
+  $("#"+id).css("visibility","visible");
+}
+
+$(".buttons button").bind("click",function(e){
+  var target = $(e.target).attr("data-target");
+  if(target === "output") render();
+  showBlock(target);
+});
+
+function getCurrenTab(){
+  var target = false;
+  $('.buttons button').filter(function() {
+    if(!!($(this).css("background-color")==="rgb(238, 238, 238)"))
+      target = $(this).attr("data-target");
+  });
+  return target;
+}
+
+function changeTab(next = true){
+  next = next ? 1 : -1;
+  var i = tabs.indexOf(getCurrenTab())+next;
+  if(tabs[i]===undefined)
+    if(next===1) i = 0
+      else i=tabs.length-1;
+  if(tabs[i] === "output") render();
+  showBlock(tabs[i]);
+}
+
+showBlock("html");
+
+$(document).keydown(function(e) {
+  if (event.shiftKey==1 && e.keyCode === 32) changeTab();
+    else if (e.ctrlKey == 1 && e.keyCode === 32) changeTab(false)
+    else if (event.shiftKey==1 && e.ctrlKey == 1){
+      render();
+      showBlock("output");
+    }
+});
+
+
+ 
+function prepareSource() {
+  var output =
+  `<!doctype html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+  </head>
+  <body></body>
+  </html>`;
+  var html = html_editor.getValue(),
+      css = css_editor.getValue(),
+      js = js_editor.getValue();
+
+  // HTML
+  output = output.replace('</body>', html + '</body>');
+
+  // CSS
+  css = '<style>' + css + '</style>';
+  output = output.replace('</head>', css + '</head>');
+
+  // Javascript
+  js = '<script>' + js + '<\/script>';
+  output = output.replace('</body>', js + '</body>');
+
+  return output;
+}
+
+function render() {
+    var source = prepareSource();
+ 
+    var iframe = document.querySelector('#output iframe').contentWindow.document;
+ 
+    iframe.open();
+    iframe.write(source);
+    iframe.close();
+}
+  </script>
+
+  
+  
+
+</body>
+</html>
