@@ -23,12 +23,27 @@
   max-width: 680px;
   margin: 0 auto;
 }
+@media only screen and (max-width: 320px) {
+  .container {
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 1023px) {
+  .container {
+    max-width: 680px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .container {
+    max-width: 720px;
+  }
+}
 
 .landing {
   height: 100vh;
   background-color: #eee;
   background: url(https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/A28WZDTYEY.jpg) no-repeat center center fixed;
-  background: url(bg.jpg) no-repeat center center fixed;
+  background: url(https://rundik.github.io/bg.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 .landing .wrapper {
@@ -38,6 +53,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  white-space: normal;
 }
 .landing .wrapper h1 {
   margin: 0;
