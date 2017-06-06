@@ -20,16 +20,16 @@
 }
 
 :root {
-  font-size: 2.9em;
+  font-size: 2.2em;
 }
 @media screen and (max-width: 1024px) {
   :root {
-    font-size: 2.6em;
+    font-size: 2.1em;
   }
 }
 @media screen and (max-width: 768px) {
   :root {
-    font-size: 2.4em;
+    font-size: 2em;
   }
 }
 @media screen and (max-width: 480px) {
@@ -49,7 +49,7 @@
 }
 @media screen and (min-width: 1280px) {
   :root {
-    font-size: 3.2em;
+    font-size: 2.6em;
   }
 }
 
@@ -59,7 +59,7 @@
   height: 100vh;
 }
 .landing .wrapper {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -75,18 +75,52 @@
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
+  margin: 0;
 }
 .landing .wrapper header .description {
   color: #ccc;
   font-size: .8rem;
   text-transform: uppercase;
   font-weight: 300;
+  margin: .1rem 0 0 0;
 }
-.landing .wrapper .email {
-  margin-top: 15px;
-  border: 2px #000 solid;
-  padding: 15px 25px 15px 25px;
-  font-weight: 600;
+.landing .wrapper header .email {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  font-size: .5rem;
+  border: 2px #fff solid;
+  margin: .7rem 0 0 0;
+  padding: .5rem 1rem;
+  font-weight: 400;
+  display: inline-block;
+}
+
+#preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: #333;
+}
+#preloader .spinner {
+  width: 3rem;
+  height: 3rem;
+  background-color: #fff;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(9rem) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(9rem) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(9rem) rotateX(-180deg) rotateY(-179.9deg);
+  }
 }
 
     </style>
@@ -99,16 +133,15 @@
 
 <body translate="no" >
 
-  
+<div id="preloader"><div class="spinner"></div></div>  
 
 <div class="landing">
   <div class="wrapper">
     <header class="header">
       <h1 class="nametag">Ivan Alexandrov</h1>
       <h2 class="description">Web Designer & Developer</h2>
+      <div><div class="email">ivan@alexandrov.online</div></div>
     </header>
-    
-<!--     <div class="email">ivan@alexandrov.online</div> -->
   </div>
   
 </div>
@@ -117,6 +150,13 @@
   
   
   
-
+<script>
+  document.onreadystatechange = function () {
+    if (document.readyState == 'complete') {
+        document.getElementById('preloader').remove();
+    }
+  };
+</script>
+  
 </body>
 </html>
