@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Downloader</title>
+  
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:300,400&amp;subset=cyrillic'>
+
+      <style>
+      * {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  transition: 250ms;
+}
+
+body {
+  background-color: #333;
+}
+
+.container {
+  width: 480px;
+  margin: 0 auto;
+  background-color: #eee;
+  padding: 15px;
+}
+
+.input {
+  text-align: center;
+}
+.input input, .input button {
+  padding: 7px;
+  margin: 5px;
+  border: 0;
+  box-shadow: 0px 0px 2px 0px;
+  background-color: #fff;
+  color: #333;
+}
+.input input:hover, .input button:hover {
+  background-color: #eee;
+}
+
+.output {
+  margin: 15px 5px 0 5px;
+  padding: 15px;
+  color: #fff;
+}
+.output #out {
+  margin: 0;
+  padding: 0;
+}
+.output #out .link {
+  height: 60px;
+  margin: 10px;
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.output #out .link a {
+  color: #fff;
+}
+
+    </style>
+
+  
+  
+  
+  
+</head>
+
+<body translate="no" >
+
+  <div class="container">
+  <div class="input">
+    <input type="text" placeholder="youtube video url..." id="url">
+    <button id="download">Download</button>
+  </div>
+  <div class="output">
+    <div id="out"></div>
+  </div>
+</div>
+  
+  
+    <script>
+    var out = document.getElementById("out");
+var in_download = document.getElementById("download");
+var in_url = document.getElementById("url");
+
+function load(path, callback) {
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onreadystatechange = function() {
+        if (httpRequest.readyState === 4) {
+            if (httpRequest.status === 200) {
+                var data = httpRequest.responseText;
+                if (callback) callback(data);
+            }
+        }
+    };
+    httpRequest.open('GET', "https://crossorigin.me/"+path);
+    httpRequest.send(); 
+}
+
+/*
+https://gist.github.com/jerolimov/3756821
+=======================================*/
+
+var queryStringMap = function(data) {
+	var result = {};
+	data.split('&').forEach(function(entry) {
+		result[
+				decodeURIComponent(entry.substring(0, entry.indexOf('=')))] =
+				decodeURIComponent(entry.substring(entry.indexOf('=') + 1));
+	});
+	return result;
+};
+
+var listOfQueryStringMaps = function(data) {
+	var result = [];
+	data.split(',').forEach(function(entry) {
+		result.push(queryStringMap(entry));
+	});
+	return result;
+};
+
+//https://stackoverflow.com/questions/3452546/javascript-regex-how-do-i-get-the-youtube-video-id-from-a-url
+function youtube_parser(url){
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    return (match&&match[7].length==11)? match[7] : false;
+}
+
+
+function getUrls(url){
+  load('http://www.youtube.com/get_video_info?video_id='+youtube_parser(url), function(data){
+
+    data = queryStringMap(data);
+    if (typeof data['adaptive_fmts'] == 'string') {
+      data['adaptive_fmts'] = listOfQueryStringMaps(data['adaptive_fmts']);
+    }
+    data.adaptive_fmts.forEach(function(videoEntry) {
+      var temp = videoEntry.size !== undefined ? (videoEntry.quality_label+'/'+videoEntry.size) : "audio";
+      out.innerHTML+= '<div class="link"><div class="info">'+
+        '['+temp+'] '+
+        (videoEntry.type.split(";")[0])+
+        '</div><a target="_blank" href="'+
+        videoEntry.url+'">Download</a></div></div>';
+      //console.log(JSON.stringify(videoEntry, null, '\t'));
+    });
+    
+  });
+}
+
+in_download.onclick = function(){
+  getUrls(in_url.value);
+}
+  </script>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67250930-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
