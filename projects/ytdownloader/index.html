@@ -139,7 +139,7 @@ function youtube_parser(url){
 
 
 function getUrls(url){
-  load('http://www.youtube.com/get_video_info?video_id='+youtube_parser(url), function(data){
+  load('http://www.youtube.com/get_video_info?video_id='+youtube_parser(url)+'&el=vevo&el=embedded&asv=3&sts=15902', function(data){
 
     data = queryStringMap(data);
     if (typeof data['adaptive_fmts'] == 'string') {
