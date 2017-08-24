@@ -104,7 +104,7 @@ function load(path, callback) {
             }
         }
     };
-    httpRequest.open('GET', "https://crossorigin.me/"+path);
+    httpRequest.open('GET', "https://cors-anywhere.herokuapp.com/"+path);
     httpRequest.send(); 
 }
 
