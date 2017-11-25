@@ -1,0 +1,16 @@
+<section id="skills" data-aos="fade-up">
+  <h1 data-aos="fade-in" data-aos-delay="300" data-aos-duration="500">Professional Skills</h1>
+  <div class="skills">
+    {% for skill in skills %}
+      <div class="header" data-aos="fade-up"  data-aos-delay="150" data-aos-offset="70"><h2>{{skill.title}}</h2></div>
+      <div class="category" data-aos="zoom-out-up" data-aos-offset="70" data-aos-delay="300">
+        {% for SingleSkill in skill.skills %}
+          <div class="skill">
+            <div class="icon">{% include "icons/"+SingleSkill.icon+".svg" %}</div>
+            <div class="title">{{SingleSkill.title}}</div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</section>

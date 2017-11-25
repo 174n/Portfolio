@@ -1,0 +1,176 @@
+{
+  "icons": ["72","96","128","144","152","192","384","512"],
+  "menu":[
+    "about",
+    "skills",
+    "experience",
+    "contact"
+  ],
+  "siteTitle": "Ivan Alexandrov - Web Designer & Developer",
+  "short_description": "Hello, I'm Ivan Alexandrov. I spend considerable time learning new and cutting-edge web technologies and developing websites.",
+  "name": "Ivan Alexandrov",
+  "description": "Web Designer & Developer",
+  "email": "ivan@alexandrov.online",
+  "url": "http://alexandrov.online",
+  "resumeBtn": {
+    "title": "Get in touch",
+    "url": "#contact"
+  },
+  "socials":[
+    {
+      "icon": "envelope",
+      "url": "mailto:ivan@alexandrov.online"
+    },
+    {
+      "icon": "github",
+      "url": "https://github.com/Rundik/"
+    },
+    {
+      "icon": "twitter",
+      "url": "https://twitter.com/ivan_0biwan"
+    },
+    {
+      "icon": "linkedin",
+      "url": "https://www.linkedin.com/in/ivan-alexandrov-46a2a8153/"
+    }
+  ],
+  "about":{
+    "header": "About me",
+    "text": "<p>Hello, I'm Ivan Alexandrov. I spend considerable time learning new and cutting-edge web technologies and developing websites. Over the years I have learned a lot about web development and design, so you can be sure that the websites I create will be professional, modern and useful for your clients.</p><p>Ready to offer my expertise! Feel free to get in touch for an initial consultation.</p>",
+    "info":[
+      {
+        "title": "Email",
+        "content": "ivan@alexandrov.online",
+        "url": "mailto:ivan@alexandrov.online"
+      },
+      {
+        "title": "Freelance",
+        "content": "Available"
+      }
+    ],
+    "languages":[
+      {
+        "title": "Russian",
+        "content": "Native"
+      },
+      {
+        "title": "German",
+        "content": "Advanced (C1)"
+      },
+      {
+        "title": "English",
+        "content": "Intermediate"
+      }
+    ]
+  },
+  "skills":[
+    {
+      "title": "Frontend",
+      "skills": [
+        {
+          "icon": "vuejs-original",
+          "title": "Vue.js"
+        },
+        {
+          "icon": "javascript-original",
+          "title": "JavaScript / ES6"
+        },
+        {
+          "icon": "html5-original",
+          "title": "HTML5"
+        },
+        {
+          "icon": "bootstrap-plain",
+          "title": "Bootstrap"
+        },
+        {
+          "icon": "sass-original",
+          "title": "CSS / SASS"
+        }
+      ]
+    },
+    {
+      "title": "Backend",
+      "skills": [
+        {
+          "icon": "php-plain",
+          "title": "PHP"
+        },
+        {
+          "icon": "nodejs-plain",
+          "title": "Node.js"
+        },
+        {
+          "icon": "express-original",
+          "title": "Express.js"
+        },
+        {
+          "icon": "firebase",
+          "title": "Firebase"
+        },
+        {
+          "icon": "devicon-plain",
+          "title": "OOP"
+        }
+      ]
+    },
+    {
+      "title": "Tools",
+      "skills": [
+        {
+          "icon": "photoshop-plain",
+          "title": "Adobe Photoshop"
+        },
+        {
+          "icon": "git-plain",
+          "title": "Git"
+        },
+        {
+          "icon": "mysql-plain",
+          "title": "MySQL"
+        },
+        {
+          "icon": "linux-original",
+          "title": "Linux"
+        }
+      ]
+    }
+  ],
+  "experience":{
+    "tags": [
+      "frontend",
+      "backend",
+      "other"
+    ],
+    "works":[
+      {
+        "image": "portfolio",
+        "tags": ["frontend","web design","responsive","javascript","sass"],
+        "title": "Personal Portfolio / CV / Resume Website",
+        "description": "This is a fully responsive one-page personal portfolio Website with modern & clean design. This website is fully responsive and mobile-friendly.",
+        "link": {
+          "text": "Visit this project",
+          "url": "http://alexandrov.online"
+        }
+      },
+      {
+        "image": "ytlisten",
+        "tags": ["frontend", "vue.js", "web design", "mobile", "web app"],
+        "title": "Web App for listening to youtube videos",
+        "description": "You can listen music or podcasts from youtube with this web app. See animated demonstration of this in the link below",
+        "link": {
+          "text": "Github page",
+          "url": "https://github.com/Rundik/YTListen"
+        }
+      }
+    ]
+  },
+  "contact": {
+    "text": "Feel free to contact me",
+    "btnText": "Send Message"
+  },
+  "footer": {
+    "url": "http://alexandrov.online",
+    "text": "All Rights Reserved 2017"
+  }
+}

@@ -1,0 +1,95 @@
+#profile{
+  background-color: #fff;
+  margin-bottom: 30px;
+  box-shadow: 0 0 18px 0px rgba(0,0,0,.3);
+  @include media-breakpoint-up(lg){
+    position: relative;
+  }
+  @include media-breakpoint-down(md){
+    margin: 60px 15px;
+  }
+  .colorized{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $main_color;
+    padding: 30px 0;
+    padding-bottom: 15px;
+    background-image: main_gradient();
+
+    .photo{
+      overflow: hidden;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: url('../img/photo.jpg');
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .name{
+      margin-top: 20px;
+      margin-bottom: 5px;
+      font-weight: 800;
+      font-size: 23px;
+      text-align: center;
+      line-height: 30px;
+      text-transform: uppercase;
+      @include media-breakpoint-down(md){
+        font-size: 25px;
+      }
+      @include media-breakpoint-only(lg){
+        font-size: 20px;
+      }
+    }
+    .description{
+      font-size: 25px;
+      font-size: 15px;
+      color: #555;
+    }
+    .social{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      a{
+        color: #333;
+        padding: 15px;
+        margin-top: 5px;
+        &:hover{
+          text-decoration: none;
+          color: #777;
+        }
+      }
+    }
+  }
+  .resume{
+    display: flex;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+    .resume-btn{
+      // text-transform: uppercase;
+      // font-weight: 800;
+      // font-size: 15px;
+      background-color: #333;
+      padding: 15px 30px;
+      border-radius: 30px;
+      display: block;
+      color: #fff;
+      text-align: center;
+      &:hover{
+        text-decoration: none;
+        background-color: #555;
+      }
+      @include media-breakpoint-up(xl) {
+        font-size: 17px;
+        width: 100%;
+        margin: 15px;
+        &:hover{
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+}

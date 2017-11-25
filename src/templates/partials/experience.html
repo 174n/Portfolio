@@ -1,0 +1,23 @@
+<section id="experience" data-aos="fade-up">
+  <h1 data-aos="fade-in" data-aos-delay="300" data-aos-duration="500">Experience</h1>
+  <div class="groups" data-aos="fade-up" data-aos-delay="400">
+    <form id="switch-groups">
+      <input type="radio" id="works-all" value="all" class="group" name="group" checked>
+      <label for="works-all">All</label>
+      {% for tag in experience.tags %}
+        <input type="radio" id="works-{{tag | replace(" ", "-")}}" value="{{tag}}" class="group" name="group">
+        <label for="works-{{tag | replace(" ", "-")}}">{{tag | capitalize}}</label>
+      {% endfor %}
+    </form>
+  </div>
+  <div class="works row">
+    {% for work in experience.works %}
+      <div class="work col-lg-6" data-groups='{{work.tags | dump}}' data-title="{{work.title}}" data-description="{{work.description}}" data-image="{{work.image}}" data-link='{{work.link | dump}}'>
+        <div class="work-wrapper" data-aos="zoom-in" data-aos-delay="450">
+          <div class="image"><img src="img/works/{{work.image}}_preview.jpg" alt="{{work.title}}"></div>
+          <div class="overlay"><i class="fa fa-eye" aria-hidden="true"></i></div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</section>

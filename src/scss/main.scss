@@ -1,0 +1,24 @@
+
+/* assets
+======================*/
+// @import '../../node_modules/normalize.css/normalize';
+// @import '../../node_modules/bootstrap/scss/grid';
+// @import '../../node_modules/font-awesome/css/font-awesome.min.css'
+
+@import '../../node_modules/aos/dist/aos';
+
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/normalize';
+@import 'bootstrap/scss/reboot';
+@import 'bootstrap/scss/grid';
+
+/* settings
+======================*/
+@import 'variables';
+@import 'fonts';
+@import 'document';
+
+/* styles
+======================*/
+@import 'page';

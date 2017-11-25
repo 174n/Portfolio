@@ -1,0 +1,26 @@
+<section id="contact" data-aos="fade-up">
+  <h1 data-aos="fade-in" data-aos-delay="100" data-aos-duration="500">Contact</h1>
+  <div class="contact">
+    <div class="row">
+      <div class="col-lg-12 text" data-aos-delay="200">{{contact.text}}</div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <form action="https://formspree.io/{{email}}" method="POST" class="contact-form" data-aos="flip-left" data-aos-delay="400">
+          <div class="input-field">
+            <input type="text" name="name" placeholder="Name">
+          </div>
+          <div class="input-field">
+            <input type="email" name="_replyto" placeholder="Email">
+          </div>
+          <div class="input-field">
+            <textarea name="message" cols="30" rows="6" placeholder="Message"></textarea>
+          </div>
+          <div class="input-field">
+            <input type="submit" value="{{contact.btnText}}">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

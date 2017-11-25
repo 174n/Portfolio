@@ -1,0 +1,10 @@
+$main_font: 'Montserrat';
+$main_color: #E1E9F4;
+
+@function main_gradient($degree:135deg){
+  @return linear-gradient($degree, #f5f7fa 0%, #c3cfe2 100%)
+}
+
+// $main_gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+// $main_gradient: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+

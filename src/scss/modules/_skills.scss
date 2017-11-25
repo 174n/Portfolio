@@ -1,0 +1,44 @@
+#skills{
+  margin-top: 70px;
+  padding: 50px;
+  h1{
+    text-align: center;
+  }
+  .skills{
+    h2{
+      font-size: 22px;
+      letter-spacing: 3px;
+      margin-top: 40px;
+      @media (max-width: 768px) {
+        font-size: 18px;
+        text-align: center;
+      }
+    }
+    .category{
+      display: flex;
+      flex-wrap: wrap;
+      // justify-content: space-between;
+      .skill{
+        padding: 20px;
+        flex-grow: 1;
+        user-select: none;
+        // &:hover{
+        //   background-color: #eee;
+        // }
+        div{
+          text-align: center;
+        }
+        .title{
+          font-size: 15px;
+          letter-spacing: .8px;
+        }
+        .icon{
+          height: 80px;
+          svg{
+            width: 70px;
+          }
+        }
+      }
+    }
+  }
+}

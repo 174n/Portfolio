@@ -1,0 +1,69 @@
+@import 'modules/_header.scss';
+@import 'modules/_profile.scss';
+@import 'modules/_about.scss';
+@import 'modules/_skills.scss';
+@import 'modules/_experience.scss';
+@import 'modules/_contact.scss';
+
+@import 'modules/_modal.scss';
+@import 'modules/_preloader.scss';
+
+
+
+
+.landing-image{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 80%;
+  background-color: #A1AEBF;
+  background-image: url('../img/bg.jpg');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  @include media-breakpoint-up(xl) {
+    height: 500px;
+  }
+}
+
+.footer-image{
+  margin-top: -10%;
+  position: relative;
+  z-index: -1;
+  bottom: 0;
+  width: 100%;
+  height: 350px;
+  background-color: #A1AEBF;
+  background-image: url('https://images.unsplash.com/photo-1508108712903-49b7ef9b1df8');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  @include media-breakpoint-down(sm){
+    height: 200px;
+  }
+  .copy{
+    font-size: 13px;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+#page{
+  margin-top: 17%;
+  div{
+    padding: 0;
+  }
+}
+
+section{
+  background-color: #fff;
+  box-shadow: 0 0 18px 0px rgba(0,0,0,.3);
+  @include media-breakpoint-up(lg) {
+    margin-left: 40px;
+  }
+}

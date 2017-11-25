@@ -1,0 +1,23 @@
+*{
+  font-family: $main_font, sans-serif;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: 250ms;
+}
+
+body{
+  width: 100%;
+  overflow: hidden;
+  background-color: $main_color;
+}
+
+
+h1{
+  font-size: 40px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  @include media-breakpoint-down(sm){
+    font-size: 20px;
+    text-align: center;
+  }
+}

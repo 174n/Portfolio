@@ -1,0 +1,35 @@
+<section id="about" data-aos="fade-up">
+  <h1 data-aos="fade-in" data-aos-delay="300" data-aos-duration="500">{{about.header}}</h1>
+  <div class="aboutme" data-aos="fade-in" data-aos-delay="600" data-aos-duration="500">
+    {{about.text|safe}}
+  </div>
+  <div class="line"></div>
+  <div class="info">
+    <div class="row">
+      <div class="column personal-info col-lg-6">
+        <h2>Personal Information</h2>
+        {% for AboutInfo in about.info %}
+          <div class="text">
+            <div class="personal-field"><strong>{{AboutInfo.title}}:</strong></div>
+            <div class="personal">
+              {% if AboutInfo.url %}
+                <a href="{{AboutInfo.url}}">{{AboutInfo.content}}</a>
+              {% else %}
+                {{AboutInfo.content}}
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="column languages col-lg-6">
+        <h2>Languages</h2>
+        {% for language in about.languages %}
+          <div class="text">
+            <div class="personal-field"><strong>{{language.title}}:</strong></div>
+            <div class="personal">{{language.content}}</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

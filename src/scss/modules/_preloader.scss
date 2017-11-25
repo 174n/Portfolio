@@ -1,0 +1,43 @@
+.loader-wrapper{
+  display: flex;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  z-index: 100;
+  background-color: $main_color;
+  background-image: main_gradient();
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  .loader{
+    text-transform: uppercase;
+    font-weight: light;
+    color: #333;
+    font-size: 50px;
+    animation: loading 5s ease-in-out infinite;
+    letter-spacing: 5px;
+
+    @include media-breakpoint-down(sm){
+      font-size: 15px;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
+  }
+}
+
+@keyframes loading {
+  0%, 100% {
+    letter-spacing: 5px;
+    @include media-breakpoint-down(sm){
+      letter-spacing: 1px;
+    }
+  }
+  50% {
+    letter-spacing: 30px;
+    @include media-breakpoint-down(sm){
+      letter-spacing: 5px;
+    }
+  }
+}

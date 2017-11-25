@@ -1,0 +1,45 @@
+#contact{
+  margin-top: 70px;
+  padding: 50px;
+  h1{
+    margin-bottom: 20px;
+  }
+  .contact{
+    .row{
+      margin: 0;
+      margin-top: 15px;
+    }
+    .text{
+      font-size: 18px;
+      letter-spacing: .8px;
+    }
+    .contact-form{
+      .input-field{
+        margin-bottom: 10px;
+        input, textarea{
+          border: 0;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 18px;
+          width: 100%;
+          padding: 7px;
+          resize: none;
+          background-color: #eee;
+        }
+        input[type="submit"]{
+          padding: 15px;
+          cursor: pointer;
+          background-color: $main_color;
+          font-weight: 800;
+          font-size: 18px;
+          color: rgba(0,0,0,.8);
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          &:hover{
+            background-color: #D0D8E3;
+            letter-spacing: 5px;
+          }
+        }
+      }
+    }
+  }
+}

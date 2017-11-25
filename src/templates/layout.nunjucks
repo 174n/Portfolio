@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{siteTitle}}</title>
+
+  <!-- Meta Tags -->
+  <meta name="description" content="{{short_description|safe}}">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="{{name}}">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="{{siteTitle|safe}}">
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:image" content="{{url}}/img/works/portfolio_preview.jpg">
+  <meta property="profile:first_name" content="{{name.split(' ')[0]}}">
+  <meta property="profile:last_name" content="{{name.split(' ')[1]}}">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@{{socials[2].url.split('/')[3]}}">
+  <meta name="twitter:title" content="{{siteTitle|safe}}">
+  <meta name="twitter:description" content="{{short_description|safe}}">
+
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="{{name}}">
+  <meta name="apple-mobile-web-app-title" content="{{name}}">
+  <meta name="theme-color" content="#e1e9f4">
+  <meta name="msapplication-navbutton-color" content="#e1e9f4">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="msapplication-starturl" content="{{url}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  {% for resolution in icons %}
+    {% set res = resolution+"x"+resolution %}
+    <link rel="icon" type="image/png" sizes="{{res}}" href="img/icons/icon-{{res}}.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="{{res}}" href="img/icons/icon-{{res}}.png">
+  {% endfor %}
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  {% include "partials/preloader.html" %}
+
+  {% block content %}{% endblock %}
+  
+  {% include "partials/browser_update.html" %}
+  <script src="js/main.js"></script>
+</body>
+</html>

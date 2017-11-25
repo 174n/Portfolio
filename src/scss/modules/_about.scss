@@ -1,0 +1,59 @@
+#about{
+  margin-bottom: 30px;
+  // border: 1px rgba(0,0,0,.2) solid;
+  padding: 40px;
+  .aboutme{
+    letter-spacing: .8px;
+    word-spacing: 2px;
+    // text-align: justify;
+  }
+  .line{
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0,0,0,.1);
+    box-shadow: 0 0 10px 0px rgba(0,0,0,.1);
+    margin: 50px 0;
+  }
+  .info{
+    .row{
+      margin: 15px;
+    }
+    .column{
+      width: 100%;
+      h2{
+        // text-align: center;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        word-spacing: 4px;
+        @include media-breakpoint-up(lg) {
+          font-size: 20px;
+          margin-bottom: 30px;
+        }
+        @include media-breakpoint-down(md) {
+          text-align: center;
+          font-size: 15px;
+          margin-bottom: 10px;
+        }
+
+      }
+      .text{
+        margin-bottom: 5px;
+        .personal-field{
+          font-weight: 800;
+        }
+        .personal{
+        }
+      }
+    }
+
+    @media (min-width: 992px) {
+      .column:last-child{
+        padding-left: 30px;
+      }
+      .column:first-child{
+        padding-right: 30px;
+      }
+    }
+  }
+}

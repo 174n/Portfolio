@@ -1,0 +1,26 @@
+{% extends "layout.nunjucks" %}
+
+{% block content %}
+
+{% include "partials/modal.html" %}
+
+<div class="landing-image" data-aos="fade-in" data-aos-duration="1000"></div>
+
+{% include "partials/heading.html" %}
+<div class="container">
+  <div id="page" class="row">
+    <div class="col-lg-3" data-aos="fade-down">
+      {% include "partials/profile.html" %}
+    </div>
+    <div class="col-lg-9">
+      {% include "partials/about.html" %}
+      {% include "partials/skills.html" %}
+      {% include "partials/experience.html" %}
+      {% include "partials/contact.html" %}
+    </div>
+  </div>
+</div>
+
+{% include "partials/footer.html" %}
+
+{% endblock %}

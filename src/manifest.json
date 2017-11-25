@@ -1,0 +1,11 @@
+{
+  "name": "",
+  "short_name": "",
+  "theme_color": "#e1e9f4",
+  "background_color": "#eeeeee",
+  "display": "browser",
+  "Scope": "/",
+  "start_url": "",
+  "icons": [],
+  "splash_pages": null
+}
