@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{siteTitle}}</title>
+  <title>{{siteTitle|safe}}</title>
 
   <!-- Meta Tags -->
   <meta name="description" content="{{short_description|safe}}">
