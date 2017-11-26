@@ -33,6 +33,7 @@
     "font-awesome": "^4.7.0",
     "normalize.css": "^7.0.0",
     "shufflejs": "^5.0.3",
-    "smooth-scroll": "^12.1.5"
+    "smooth-scroll": "^12.1.5",
+    "uglify-js": "^3.2.0"
   }
 }
