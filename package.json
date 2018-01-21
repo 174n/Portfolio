@@ -24,7 +24,8 @@
     "gulp-nunjucks-render": "^2.2.1",
     "gulp-responsive": "^2.8.0",
     "gulp-sass": "^3.1.0",
-    "gulp-json-editor": "^2.2.1"
+    "gulp-json-editor": "^2.2.1",
+    "uglify-js": "^3.2.0"
   },
   "dependencies": {
     "aos": "^2.2.0",
@@ -33,7 +34,6 @@
     "font-awesome": "^4.7.0",
     "normalize.css": "^7.0.0",
     "shufflejs": "^5.0.3",
-    "smooth-scroll": "^12.1.5",
-    "uglify-js": "^3.2.0"
+    "smooth-scroll": "^12.1.5"
   }
 }
