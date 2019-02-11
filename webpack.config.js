@@ -48,7 +48,7 @@ module.exports = {
                         <source data-srcset="${url}@1x.webp 1x, ${url}@2x.webp 2x" type="image/webp">
                         <source data-srcset="${url}@1x.${ext} 1x, ${url}@2x.${ext} 2x" type="image/${ext==="jpg" ? "jpeg" : ext}">
                         <!--[if IE 9]></video><![endif]-->
-                        <img class="lazyload" data-src="${url}@1x.${ext}" alt="${alt}">
+                        <img class="lazyload no-js" data-src="${url}@1x.${ext}" alt="${alt}">
                       </picture>
                     `,
                     getWorkLink: work =>

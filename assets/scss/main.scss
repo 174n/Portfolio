@@ -340,10 +340,16 @@ section {
     padding-bottom: 15px;
     background-image: main_gradient();
 
-    .photo img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
+    .photo {
+      text-align: center;
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+      .no-js {
+        display: none;
+      }
     }
     .name {
       margin-top: 20px;
