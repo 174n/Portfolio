@@ -84,10 +84,6 @@
           "title": "HTML5"
         },
         {
-          "icon": "bootstrap-plain",
-          "title": "Bootstrap"
-        },
-        {
           "icon": "sass-original",
           "title": "CSS / SASS"
         }
