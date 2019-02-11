@@ -19,19 +19,23 @@
   "socials":[
     {
       "icon": "envelope",
-      "url": "mailto:ivan@alexandrov.online"
+      "url": "mailto:ivan@alexandrov.online",
+      "label": "Send me an E-mail"
     },
     {
       "icon": "github",
-      "url": "https://github.com/Rundik/"
+      "url": "https://github.com/Rundik/",
+      "label": "My GitHub profile"
     },
     {
       "icon": "twitter",
-      "url": "https://twitter.com/ivan_0biwan"
+      "url": "https://twitter.com/ivan_0biwan",
+      "label": "Follow me on twitter"
     },
     {
       "icon": "linkedin",
-      "url": "https://www.linkedin.com/in/ivan--alexandrov/"
+      "url": "https://www.linkedin.com/in/ivan--alexandrov/",
+      "label": "My LinkedIn profile"
     }
   ],
   "about":{

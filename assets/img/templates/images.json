@@ -2,13 +2,24 @@
   {
     "files": [
       {
-        "size": 200,
-        "src": "photo.jpg"
-      },
-      {
         "size": 1440,
         "src": "bg.jpg"
       }
+    ]
+  },
+  {
+    "alternates": [
+      {
+        "dest": "[name]@1x",
+        "size": 300
+      },
+      {
+        "dest": "[name]@2x",
+        "size": 600
+      }
+    ],
+    "files": [
+      "photo.jpg"
     ]
   },
   {

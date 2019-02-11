@@ -38,12 +38,24 @@ body {
   color: $main_color_text;
   line-height: 1.5;
   font-weight: 300;
+  .loading {
+    animation: fadeIn 1.57s cubic-bezier(0.42, 0, 0.86, 0.46) forwards;
+  }
   &.noscroll {
     overflow: hidden;
   }
 }
 
-h1 {
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+h1, h2 {
   font-size: 40px;
   text-transform: uppercase;
   margin-bottom: 30px;
@@ -182,7 +194,7 @@ section {
 //============================
 
 #header {
-  &.scrolling {
+  &.scrolling, &.no-js {
     background-color: $main_color;
     background-image: main_gradient();
     box-shadow: $shadow;
@@ -242,7 +254,7 @@ section {
 
   }
 }
-.footer-image {
+#footer {
   margin-top: 70px;
   background-color: $main_color;
   background-image: $hero_bg;
@@ -277,7 +289,7 @@ section {
       width: 100%;
     }
   }
-  .content-wrapper {
+  #main {
     width: 75%;
     @include mq($until: desktop) {
       width: 100%;
@@ -425,7 +437,7 @@ section {
     }
     .column {
       width: 100%;
-      h2 {
+      h3 {
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -469,11 +481,11 @@ section {
 #skills {
   margin-top: 70px;
   padding: 50px;
-  h1 {
+  h2 {
     text-align: center;
   }
   .skills {
-    h2 {
+    h3 {
       font-size: 22px;
       letter-spacing: 3px;
       margin-top: 40px;
@@ -531,6 +543,10 @@ section {
       display: block;
     }
 
+    &.no-js {
+      display: none;
+    }
+
     input[type=radio]{
       position: absolute;
       visibility: hidden;
@@ -550,7 +566,7 @@ section {
       margin-left: -5px;
       user-select: none;
       display: inline-block;
-      &:hover {
+      &:hover, &:focus {
         background-color: #e5e5e5;
       }
       @include mq($until: tablet) {
@@ -564,7 +580,7 @@ section {
     input[type=radio]:checked + label {
       color: #333;
       background: #fff;
-      &:hover {
+      &:hover, &:focus {
         background-color: $main_color;
       }
     }
@@ -582,6 +598,7 @@ section {
     .work {
       width: 50%;
       padding: 10px;
+      outline: none;
       transition: all 300ms ease-in-out;
       @include mq($until: tablet) {
         width: 100%;
@@ -601,6 +618,18 @@ section {
         height: 100%;
         box-shadow: 0 0 10px 0px rgba(0,0,0,.2);
         height: 275px;
+        & > a {
+          display: none;
+          &.no-js {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 300;
+            top: 0;
+            left: 0;
+          }
+        }
       }
       .image {
         @include imageloader();
@@ -614,7 +643,7 @@ section {
           object-fit: cover;
         }
       }
-      &:hover {
+      &:hover, &:focus {
         .overlay {
           visibility: visible;
           opacity: 1;
@@ -660,7 +689,7 @@ section {
           left: 50%;
           transform: translateX(-50%);
         }
-        &:hover .image img {
+        &:hover .image img, &:focus .image img {
           top: 0;
         }
       }
@@ -675,7 +704,7 @@ section {
 #contact {
   margin-top: 70px;
   padding: 50px;
-  h1 {
+  h2 {
     margin-bottom: 20px;
   }
   .contact {
@@ -757,7 +786,7 @@ section {
     padding: 10px 15px;
     color: #ccc;
     cursor: pointer;
-    &:hover {
+    &:hover, &:focus {
       color: #fff;
     }
     @include mq($from: desktop) {

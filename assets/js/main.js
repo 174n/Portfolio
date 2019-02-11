@@ -1,3 +1,8 @@
+// Remove no-js classes
+[...document.querySelectorAll(".no-js")].forEach(el => {
+  el.classList.remove("no-js");
+});
+
 // Scrolling effects
 
 const header = document.querySelector("#header");
@@ -61,6 +66,7 @@ works.forEach(work => {
       if(modal.getAttribute("data-id") === id) {
         modal.scrollTop = 0;
         modal.classList.add("show");
+        modal.querySelector(".close").focus();
         document.body.classList.add("noscroll");
       }
     });
@@ -71,7 +77,7 @@ works.forEach(work => {
 // Close modal
 
 modals.forEach(modal => {
-  modal.addEventListener("click", e => {
+  const closeModal = e => {
     if(["fa-times", "close", "modal"]
       .map(className => e.target.classList.contains(className))
       .reduce((a, v) => a || v, false)) {
@@ -90,7 +96,14 @@ modals.forEach(modal => {
         });
       document.body.classList.remove("noscroll");
     }
+  };
+  modal.addEventListener("click", closeModal);
+  modal.addEventListener('keydown', e => {
+     if(e.keyCode == 27) { //esc
+       closeModal(e);
+     }
   });
+
 });
 
 
@@ -136,3 +149,13 @@ window.onresize = () => {
     window.AOS.refresh();
   }, 1000);
 }
+
+// Enter -> Click
+
+[...document.querySelectorAll("[tabindex]")].forEach(el => {
+  el.addEventListener('keydown', e => {
+     if(e.keyCode == 13 || e.keyCode == 32) {
+       el.click();
+     }
+  });
+})

@@ -41,6 +41,9 @@ module.exports = {
                     data: require(getPath('locals.json')),
                     picture: (url, alt="", ext="jpg") => `
                       <picture>
+                        <noscript>
+                          <img src="${url}@1x.${ext}" alt="${alt}" />
+                        </noscript>
                         <!--[if IE 9]><video style="display: none;><![endif]-->
                         <source data-srcset="${url}@1x.webp 1x, ${url}@2x.webp 2x" type="image/webp">
                         <source data-srcset="${url}@1x.${ext} 1x, ${url}@2x.${ext} 2x" type="image/${ext==="jpg" ? "jpeg" : ext}">
@@ -48,6 +51,9 @@ module.exports = {
                         <img class="lazyload" data-src="${url}@1x.${ext}" alt="${alt}">
                       </picture>
                     `,
+                    getWorkLink: work =>
+                      work.links[0] ? work.links[0].url
+                      : `/images/works/${work.images[0].name}@2x.png`
                   }
                 })
               ]
