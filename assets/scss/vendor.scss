@@ -1,4 +1,6 @@
 @import "~normalize-scss";
 @include normalize();
 
+@import "./_fonts";
+
 @import "~aos/src/sass/aos"
