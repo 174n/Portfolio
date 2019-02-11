@@ -1,0 +1,291 @@
+{
+  "icons": ["72","96","128","144","152","192","384","512"],
+  "menu":[
+    "about",
+    "skills",
+    "experience",
+    "contact"
+  ],
+  "siteTitle": "Ivan Alexandrov - Web Designer & Developer",
+  "short_description": "Hello, I'm Ivan Alexandrov. I spend considerable time learning new and cutting-edge web technologies and developing websites.",
+  "name": "Ivan Alexandrov",
+  "description": "Web Developer & Designer",
+  "email": "ivan@alexandrov.online",
+  "url": "http://alexandrov.online",
+  "resumeBtn": {
+    "title": "Get in touch",
+    "url": "#contact"
+  },
+  "socials":[
+    {
+      "icon": "envelope",
+      "url": "mailto:ivan@alexandrov.online"
+    },
+    {
+      "icon": "github",
+      "url": "https://github.com/Rundik/"
+    },
+    {
+      "icon": "twitter",
+      "url": "https://twitter.com/ivan_0biwan"
+    },
+    {
+      "icon": "linkedin",
+      "url": "https://www.linkedin.com/in/ivan--alexandrov/"
+    }
+  ],
+  "about":{
+    "header": "About me",
+    "text": "<p>Hello, I'm Ivan Alexandrov. I spend considerable time learning new and cutting-edge web technologies and developing websites. Over the years I have learned a lot about web development and design, so you can be sure that the websites I create will be professional, modern and useful for your clients.</p><p>Ready to offer my expertise! Feel free to get in touch for an initial consultation.</p>",
+    "info":[
+      {
+        "title": "Email",
+        "content": "ivan@alexandrov.online",
+        "url": "mailto:ivan@alexandrov.online"
+      },
+      {
+        "title": "Freelance",
+        "content": "Available"
+      }
+    ],
+    "languages":[
+      {
+        "title": "Russian",
+        "content": "Native"
+      },
+      {
+        "title": "German",
+        "content": "Advanced (C1)"
+      },
+      {
+        "title": "English",
+        "content": "Intermediate"
+      }
+    ]
+  },
+  "skills":[
+    {
+      "title": "Frontend",
+      "skills": [
+        {
+          "icon": "vuejs-original",
+          "title": "Vue.js"
+        },
+        {
+          "icon": "javascript-original",
+          "title": "JavaScript / ES 2018"
+        },
+        {
+          "icon": "html5-original",
+          "title": "HTML5"
+        },
+        {
+          "icon": "bootstrap-plain",
+          "title": "Bootstrap"
+        },
+        {
+          "icon": "sass-original",
+          "title": "CSS / SASS"
+        }
+      ]
+    },
+    {
+      "title": "Backend",
+      "skills": [
+        {
+          "icon": "php-plain",
+          "title": "PHP"
+        },
+        {
+          "icon": "laravel-plain",
+          "title": "Laravel"
+        },
+        {
+          "icon": "nodejs-plain",
+          "title": "Node.js"
+        },
+        {
+          "icon": "express-original",
+          "title": "Express.js"
+        },
+        {
+          "icon": "firebase",
+          "title": "Firebase"
+        }
+      ]
+    },
+    {
+      "title": "Tools",
+      "skills": [
+        {
+          "icon": "photoshop-plain",
+          "title": "Adobe Photoshop"
+        },
+        {
+          "icon": "git-plain",
+          "title": "Git"
+        },
+        {
+          "icon": "mysql-plain",
+          "title": "MySQL"
+        },
+        {
+          "icon": "linux-original",
+          "title": "Linux"
+        }
+      ]
+    }
+  ],
+  "experience":{
+    "tags": [
+      "frontend",
+      "backend",
+      "design"
+    ],
+    "works":[
+      {
+        "images": [{
+          "name": "inlineweb",
+          "title": "Index page where all projects are displayed"
+        },{
+          "name": "inlineweb2",
+          "title": "Editor page"
+        },{
+          "name": "inlineweb3",
+          "title": "User page"
+        }],
+        "videos": [{
+          "id": "TbT0RxHoWho"
+        },{
+          "id": "8Tn7KwhXK48"
+        }],
+        "tags": ["backend", "responsive", "vue.js", "laravel", "jwt"],
+        "title": "InlineWeb: frontend playground",
+        "description": "It's like a normal frontend playground, but for itty.bitty-like web apps. User's apps don't need to be saved on a server, because all the content will be encoded in the url. URLs up to 4000 bytes can be saved on user's account and accessed through short aliases. <p>Compared to itty.bitty you can use secure local storage through custom functions. Each project's storage is encapsulated and can't be accessed from other projects.</p>",
+        "shortPreview": true,
+        "links": [{
+            "text": "Demo",
+            "url": "http://inlineweb.herokuapp.com"
+          },{
+            "text": "Github page",
+            "url": "https://github.com/Rundik/inlineweb",
+            "icon": "github"
+        }]
+      },
+      {
+        "images": [{
+          "name": "opentabletop",
+          "title": "Gameplay example"
+        },{
+          "name": "opentabletop2",
+          "title": "Lobby settings"
+        },{
+          "name": "opentabletop3",
+          "title": "Adding decks to the tabletop"
+        }],
+        "videos": [{
+          "id": "1SPWN2cHQ_s"
+        }],
+        "tags": ["frontend", "vue.js", "firebase"],
+        "title": "OpenTabletop: play any tabletop game in browser",
+        "description": "Online project based on Vue.js and Firebase in which people can play any board games with friends<p><strong>Features</strong><ul><li>Import/Export lobbies</li><li>In-game chat</li><li>Any type of dices</li><li>Counters</li><li>Lobby customization</li><li>Storage for decks</li></ul></p>",
+        "shortPreview": true,
+        "links": [{
+            "text": "Demo",
+            "url": "https://playopentabletop.firebaseapp.com"
+          },{
+            "text": "Github page",
+            "url": "https://github.com/Rundik/OpenTabletop",
+            "icon": "github"
+        }]
+      },
+
+      {
+        "images": [{
+          "name": "dpopmap"
+        }],
+        "tags": ["frontend", "responsive", "landing page", "webpack"],
+        "title": "Business course website at the Moscow Association of Entrepreneurs",
+        "description": "A landing-page where people can view course information, how to get there and sign up for a course.<br>This website is fully responsive and mobile-friendly.",
+        "links": []
+      },
+      {
+        "images": [{
+          "name": "goodveterinar"
+        }],
+        "tags": ["frontend", "responsive", "landing page", "webpack"],
+        "title": "Online veterinary consultation",
+        "description": "A site where people can get a vet consultation. The first free consultation is carried out directly on the site, using a third-party widget<br>This website is fully responsive and mobile-friendly.",
+        "links": []
+      },
+      {
+        "images": [{
+          "name": "ytlisten"
+        }],
+        "tags": ["frontend", "vue.js", "responsive", "web app"],
+        "title": "Web App for listening to youtube videos",
+        "description": "You can listen music or podcasts from youtube with this web app. See animated demonstration of this in the link below",
+        "links": [{
+          "text": "Github page",
+          "url": "https://github.com/Rundik/YTListen"
+        }]
+      },
+      {
+        "images": [{
+          "name": "business_school"
+        },{
+          "name": "business_school2"
+        },{
+          "name": "business_school3"
+        },{
+          "name": "business_school4"
+        }],
+        "tags": ["design", "markup", "photoshop"],
+        "title": "Design of leaflets for a business school",
+        "description": "Two sided leaflets made for a business school at the Moscow Association of Entrepreneurs. The design of the leaflets had to be matched with the design of the site.",
+        "shortPreview": true,
+        "links": []
+      },
+      {
+        "images": [{
+          "name": "web_agency4"
+        },{
+          "name": "web_agency2"
+        },{
+          "name": "web_agency3"
+        },{
+          "name": "web_agency"
+        }],
+        "tags": ["design", "markup", "photoshop"],
+        "title": "Design of leaflets for a web-design agency",
+        "description": "Two sided leaflets made for a web-design agency located in russia. The design of the leaflets had to be matched with the design of the site.",
+        "shortPreview": true,
+        "links": []
+      },
+      {
+        "images": [{
+          "name": "portfolio"
+        }],
+        "tags": ["frontend","responsive","javascript","sass","webpack"],
+        "title": "Personal Portfolio / CV / Resume Website",
+        "description": "This is a fully responsive one-page personal portfolio Website with modern & clean design. This website is fully responsive and mobile-friendly.",
+        "links": [{
+          "text": "Visit this project",
+          "url": "http://alexandrov.online"
+        },{
+          "text": "Github Page",
+          "url": "https://github.com/Rundik/Portfolio",
+          "icon": "github"
+        }]
+      }
+    ]
+  },
+  "contact": {
+    "text": "Feel free to contact me",
+    "btnText": "Send Message"
+  },
+  "footer": {
+    "url": "http://alexandrov.online",
+    "text": "All Rights Reserved 2017"
+  }
+}

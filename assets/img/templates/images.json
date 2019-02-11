@@ -1,0 +1,54 @@
+[
+  {
+    "files": [
+      {
+        "size": 200,
+        "src": "photo.jpg"
+      },
+      {
+        "size": 1440,
+        "src": "bg.jpg"
+      }
+    ]
+  },
+  {
+    "alternates": [
+      {
+        "dest": "[name]-thumbnail@1x",
+        "size": 340
+      },
+      {
+        "dest": "[name]-thumbnail@2x",
+        "size": 680
+      },
+      {
+        "dest": "[name]@1x",
+        "size": 680
+      },
+      {
+        "dest": "[name]@2x",
+        "size": 1360
+      }
+    ],
+    "files": [
+      "works/portfolio.png",
+      "works/ytlisten.png",
+      "works/business_school.png",
+      "works/business_school2.png",
+      "works/business_school3.png",
+      "works/business_school4.png",
+      "works/web_agency.png",
+      "works/web_agency2.png",
+      "works/web_agency3.png",
+      "works/web_agency4.png",
+      "works/dpopmap.png",
+      "works/goodveterinar.png",
+      "works/inlineweb.png",
+      "works/inlineweb2.png",
+      "works/inlineweb3.png",
+      "works/opentabletop.png",
+      "works/opentabletop2.png",
+      "works/opentabletop3.png"
+    ]
+  }
+]
