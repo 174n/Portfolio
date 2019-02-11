@@ -119,6 +119,7 @@ module.exports = {
         to: 'images'
       },
       'assets/.nojekyll',
+      'assets/favicon.ico',
       'assets/CNAME',
       'pages/404.html'
     ]),
