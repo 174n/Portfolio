@@ -118,6 +118,12 @@ module.exports = {
         from: 'assets/img/og_image.jpg',
         to: 'images'
       },
+      {
+        from: 'assets/font/*.*',
+        to: 'font',
+        toType: 'dir',
+        flatten: true
+      },
       'assets/.nojekyll',
       'assets/favicon.ico',
       'assets/CNAME',

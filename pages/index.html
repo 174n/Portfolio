@@ -22,8 +22,6 @@
   <meta name="twitter:title" content="{{{ data.siteTitle }}}">
   <meta name="twitter:description" content="{{{ data.short_description }}}">
 
-  <!-- <link rel="manifest" href="manifest.json"> -->
-
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="application-name" content="{{ data.name }}">
@@ -34,8 +32,6 @@
   <meta name="msapplication-starturl" content="{{ data.url }}">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link rel="stylesheet" href="">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
@@ -190,9 +186,6 @@
                     {{{ picture(`/images/works/${work.images[0].name}-thumbnail`, work.title, "png" ) }}}
                   </div>
                   <div class="overlay">
-                    <div class="icon">
-                      <i class="fa fa-eye" aria-hidden="true"></i>
-                    </div>
                     <div class="title">
                       {{ work.title }}
                     </div>

@@ -6,7 +6,7 @@
     "experience",
     "contact"
   ],
-  "siteTitle": "Ivan Alexandrov - Web Designer & Developer",
+  "siteTitle": "Ivan Alexandrov - Web Developer & Designer",
   "short_description": "Hello, I'm Ivan Alexandrov. I spend considerable time learning new and cutting-edge web technologies and developing websites.",
   "name": "Ivan Alexandrov",
   "description": "Web Developer & Designer",
@@ -227,7 +227,8 @@
         "description": "You can listen music or podcasts from youtube with this web app. See animated demonstration of this in the link below",
         "links": [{
           "text": "Github page",
-          "url": "https://github.com/Rundik/YTListen"
+          "url": "https://github.com/Rundik/YTListen",
+          "icon": "github"
         }]
       },
       {
