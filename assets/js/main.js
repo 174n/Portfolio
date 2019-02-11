@@ -59,9 +59,7 @@ workSelektors.forEach(input => {
 
 works.forEach(work => {
   work.addEventListener("click", e => {
-    let id = e.path
-      .filter(el => el.classList && el.classList.contains("work"))[0]
-      .getAttribute("data-id");
+    let id = work.getAttribute("data-id");
     modals.forEach(modal => {
       if(modal.getAttribute("data-id") === id) {
         modal.scrollTop = 0;
