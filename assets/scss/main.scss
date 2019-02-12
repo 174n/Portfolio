@@ -343,12 +343,13 @@ section {
     .photo {
       text-align: center;
       img {
+        display: none;
+      }
+      img[src] {
+        display: block;
         width: 200px;
         height: 200px;
         border-radius: 50%;
-      }
-      .no-js {
-        display: none;
       }
     }
     .name {
@@ -503,7 +504,14 @@ section {
     .category {
       display: flex;
       flex-wrap: wrap;
+      @supports not (flex-wrap: wrap) {
+        display: block;
+        text-align: center;
+      }
       .skill {
+        @supports not (flex-wrap: wrap) {
+          display: inline-block;
+        }
         padding: 20px;
         flex-grow: 1;
         user-select: none;
@@ -598,11 +606,20 @@ section {
   .works {
     user-select: none;
     flex-wrap: wrap;
+
+    @supports not (flex-wrap: wrap) {
+      display: block;
+    }
+
     @include mq($until: tablet) {
       margin-top: 60px;
     }
     .work {
       width: 50%;
+      @supports not (flex-wrap: wrap) {
+        display: inline-block;
+        width: 47%;
+      }
       padding: 10px;
       outline: none;
       transition: all 300ms ease-in-out;

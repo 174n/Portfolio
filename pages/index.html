@@ -140,29 +140,29 @@
           <h2 data-aos="fade-in" data-aos-delay="300" data-aos-duration="500">Professional Skills</h2>
           <each loop="skill in data.skills">
             <div class="skills">
-                <div
-                  class="header"
-                  data-aos="fade-up"
-                  data-aos-delay="150"
-                  data-aos-offset="70">
-                  <h3>{{ skill.title }}</h3>
-                </div>
-                <div
-                  class="category"
-                  data-aos="zoom-out-up"
-                  data-aos-offset="70"
-                  data-aos-delay="300">
-                    <each loop="singleSkill in skill.skills">
-                      <div class="skill">
-                        <div class="icon">
-                          <svg viewBox="0 0 100 100" class="icon shape-codepen">
-                            <use xlink:href="/images/sprite.svg#{{ singleSkill.icon }}"></use>
-                          </svg>
-                        </div>
-                        <div class="title">{{ singleSkill.title }}</div>
+              <div
+                class="header"
+                data-aos="fade-up"
+                data-aos-delay="150"
+                data-aos-offset="70">
+                <h3>{{ skill.title }}</h3>
+              </div>
+              <div
+                class="category"
+                data-aos="zoom-out-up"
+                data-aos-offset="70"
+                data-aos-delay="300">
+                  <each loop="singleSkill in skill.skills">
+                    <div class="skill">
+                      <div class="icon">
+                        <svg viewBox="0 0 100 100" class="icon shape-codepen">
+                          <use xlink:href="/images/sprite.svg#{{ singleSkill.icon }}"></use>
+                        </svg>
                       </div>
-                    </each>
-                </div>
+                      <div class="title">{{ singleSkill.title }}</div>
+                    </div>
+                  </each>
+              </div>
             </div>
           </each>
         </section>
@@ -299,6 +299,15 @@
   </each>
 
 <script>
+  var imgs = document.getElementsByClassName("lazyload");
+  for (var i = 0; i < imgs.length; i++) {
+    var srces = imgs[i].parentElement.getElementsByTagName("source");
+    for (var j = 0; j < srces.length; j++) {
+      srces[j].setAttribute("srcset", srces[j].getAttribute("data-srcset"));
+    }
+    imgs[i].src = imgs[i].getAttribute("data-src");
+    imgs[i].setAttribute("class", imgs[i].getAttribute("class") + " lazyloaded");
+  }
   (function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
   h=encodeURIComponent,i=d.pushState,k=function(){return Math.random().toString(36)},
   l=function(){return g.cid||(g.cid=k()),g.cid},m=function(r){var s=[];for(var t in r)

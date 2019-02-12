@@ -107,13 +107,13 @@ modals.forEach(modal => {
 
 // Lasy loading images
 
-[...document.querySelectorAll(".lazyload")].forEach(img => {
-  [...img.parentElement.getElementsByTagName('source')].forEach(src => {
-    src.setAttribute("srcset", src.getAttribute("data-srcset"));
-  });
-  img.src = img.getAttribute("data-src");
-  img.classList.add("lazyloaded");
-});
+// [...document.querySelectorAll(".lazyload")].forEach(img => {
+//   [...img.parentElement.getElementsByTagName('source')].forEach(src => {
+//     src.setAttribute("srcset", src.getAttribute("data-srcset"));
+//   });
+//   img.src = img.getAttribute("data-src");
+//   img.classList.add("lazyloaded");
+// });
 
 
 // Lasy loading videos
