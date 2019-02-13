@@ -130,7 +130,7 @@ modals.forEach(modal => {
     let iframe = document.createElement("iframe");
     iframe.setAttribute("allowfullscreen", "");
     iframe.setAttribute("allow", "autoplay");
-    iframe.setAttribute("src", `https://www.youtube.com/embed/${vidId}?autoplay=1`);
+    iframe.setAttribute("src", `https://www.youtube.com/embed/${vidId}?autohide=1&autoplay=1&rel=0&modestbranding=1`);
 
     vid.appendChild(iframe);
     link.classList.add("hidden");
