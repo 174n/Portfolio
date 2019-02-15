@@ -305,13 +305,9 @@ section {
   background-image: $hero_bg;
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-attachment: fixed;
   z-index: -1;
-
-  @media (min-width: 1440px), (max-height: 961px) {
-    background-size: cover;
-  }
 
   @include mq($from: wide) {
     height: 500px;
