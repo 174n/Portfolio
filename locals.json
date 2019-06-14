@@ -41,6 +41,7 @@
   "about":{
     "header": "About me",
     "text": "<p>Hello, I'm Ivan Alexandrov. I spend considerable time learning new and cutting-edge web technologies and developing websites. Over the years I have learned a lot about web development and design, so you can be sure that the websites I create will be professional, modern and useful for your clients.</p><p>Ready to offer my expertise! Feel free to get in touch for an initial consultation.</p>",
+    "infoTitle": "General Information",
     "info":[
       {
         "title": "Email",
@@ -49,7 +50,7 @@
       },
       {
         "title": "Freelance",
-        "content": "Available"
+        "content": "Currently not available"
       }
     ],
     "languages":[
