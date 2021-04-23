@@ -3,7 +3,7 @@ const HtmlPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ResponsiveJSONWebpackPlugin = require("responsive-json-webpack-plugin");
+const ResponsiveJSONWebpackPlugin = require("@rundik/responsive-json-webpack-plugin");
 const ImageminWebpWebpackPlugin= require("imagemin-webp-webpack-plugin");
 const WebpackBar = require('webpackbar');
 
