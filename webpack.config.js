@@ -21,7 +21,7 @@ module.exports = {
     ]
   },
   output: {
-    path: getPath('dist'),
+    path: getPath('docs'),
     publicPath: '/',
     filename: 'js/[name].[chunkhash].js'
   },
@@ -93,7 +93,7 @@ module.exports = {
     new WebpackBar({
       profile: true
     }),
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['docs']),
     new ResponsiveJSONWebpackPlugin({
       sourceTemplates: "assets/img/templates",
       sourceImages: "assets/img",
@@ -145,6 +145,6 @@ module.exports = {
   ],
   devServer: {
     open: true,
-    contentBase: [getPath('dist')]
+    contentBase: [getPath('docs')]
   }
 };
