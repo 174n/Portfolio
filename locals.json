@@ -24,7 +24,7 @@
     },
     {
       "icon": "github",
-      "url": "https://github.com/Rundik/",
+      "url": "https://github.com/174n/",
       "label": "My GitHub profile"
     },
     {
@@ -169,7 +169,7 @@
             "url": "http://inlineweb.herokuapp.com"
           },{
             "text": "Github page",
-            "url": "https://github.com/Rundik/inlineweb",
+            "url": "https://github.com/174n/inlineweb",
             "icon": "github"
         }]
       },
@@ -196,7 +196,7 @@
             "url": "https://playopentabletop.firebaseapp.com"
           },{
             "text": "Github page",
-            "url": "https://github.com/Rundik/OpenTabletop",
+            "url": "https://github.com/174n/OpenTabletop",
             "icon": "github"
         }]
       },
@@ -228,7 +228,7 @@
         "description": "You can listen music or podcasts from youtube with this web app. See animated demonstration of this in the link below",
         "links": [{
           "text": "Github page",
-          "url": "https://github.com/Rundik/YTListen",
+          "url": "https://github.com/174n/YTListen",
           "icon": "github"
         }]
       },
@@ -276,7 +276,7 @@
           "url": "http://alexandrov.online"
         },{
           "text": "Github Page",
-          "url": "https://github.com/Rundik/Portfolio",
+          "url": "https://github.com/174n/Portfolio",
           "icon": "github"
         }]
       }
