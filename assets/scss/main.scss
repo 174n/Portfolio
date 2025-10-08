@@ -460,8 +460,6 @@ section {
         .personal-field {
           font-weight: 800;
         }
-        .personal {
-        }
       }
     }
 
@@ -529,10 +527,10 @@ section {
 }
 
 
-// EXPERIENCE
+// OPENSOURCE
 //============================
 
-#experience {
+#opensource {
   margin-top: 70px;
   padding: 50px;
   text-align: center;
@@ -712,6 +710,24 @@ section {
           top: 0;
         }
       }
+    }
+  }
+
+  .github-button {
+    background-color: $main_color;
+    color: $main_color_text;
+    display: block;
+    padding: 15px 10px;
+    width: 100%;
+    margin-top: 15px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    &:hover {
+      background-color: #D0D8E3;
+      letter-spacing: 5px;
     }
   }
 }

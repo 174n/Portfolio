@@ -1,10 +1,22 @@
 {
   "icons": ["72","96","128","144","152","192","384","512"],
   "menu":[
-    "about",
-    "skills",
-    "experience",
-    "contact"
+    {
+      "title": "About",
+      "link": "#about"
+    },
+    {
+      "title": "Skills",
+      "link": "#skills"
+    },
+    {
+      "title": "Open Source",
+      "link": "#opensource"
+    },
+    {
+      "title": "Contact",
+      "link": "#contact"
+    }
   ],
   "siteTitle": "Ivan Alexandrov - Web Developer & Designer",
   "short_description": "Hello, I'm Ivan Alexandrov. I spend considerable time learning new and cutting-edge web technologies and developing websites.",
@@ -29,7 +41,7 @@
     },
     {
       "icon": "twitter",
-      "url": "https://twitter.com/ivan_0biwan",
+      "url": "https://x.com/ivan_0biwan",
       "label": "Follow me on twitter"
     },
     {
@@ -40,7 +52,7 @@
   ],
   "about":{
     "header": "About me",
-    "text": "<p>Hello, I'm Ivan Alexandrov. I spend considerable time learning new and cutting-edge web technologies and developing websites. Over the years I have learned a lot about web development and design, so you can be sure that the websites I create will be professional, modern and useful for your clients.</p><p>Ready to offer my expertise! Feel free to get in touch for an initial consultation.</p>",
+    "text": "<p>Hi — I’m Ivan Alexandrov, a software developer. I started as a freelance developer before completing a bachelor’s degree in computer science in Stuttgart; during my studies I was a working student, contributing to the development of enterprise software. I focus on building reliable, maintainable software and currently work on modeling software for an enterprise product. I enjoy solving engineering challenges to develop reliable, production-ready solutions.</p><p>Feel free to connect on LinkedIn or use the contact form if you’d like to discuss professional opportunities or collaborations.</p>",
     "infoTitle": "General Information",
     "info":[
       {
@@ -60,11 +72,11 @@
       },
       {
         "title": "German",
-        "content": "Advanced (C1)"
+        "content": "Advanced"
       },
       {
         "title": "English",
-        "content": "Intermediate"
+        "content": "Advanced"
       }
     ]
   },
@@ -140,8 +152,7 @@
   "experience":{
     "tags": [
       "frontend",
-      "backend",
-      "design"
+      "backend"
     ],
     "works":[
       {
@@ -160,14 +171,11 @@
         },{
           "id": "8Tn7KwhXK48"
         }],
-        "tags": ["backend", "responsive", "vue.js", "laravel", "jwt"],
+        "tags": ["backend", "frontend", "responsive", "vue.js", "laravel", "jwt"],
         "title": "InlineWeb: frontend playground",
-        "description": "It's like a normal frontend playground, but for itty.bitty-like web apps. User's apps don't need to be saved on a server, because all the content will be encoded in the url. URLs up to 4000 bytes can be saved on user's account and accessed through short aliases. <p>Compared to itty.bitty you can use secure local storage through custom functions. Each project's storage is encapsulated and can't be accessed from other projects.</p>",
+        "description": "It's like a normal frontend playground, but for <a href=\"http://about.bitty.site\" target=\"_blank\">itty.bitty</a>-like web apps. User's apps don't need to be saved on a server, because all the content will be encoded in the url. URLs up to 4000 bytes can be saved on user's account and accessed through short aliases. <p>Compared to itty.bitty you can use secure local storage through custom functions. Each project's storage is encapsulated and can't be accessed from other projects.</p>",
         "shortPreview": true,
         "links": [{
-            "text": "Demo",
-            "url": "http://inlineweb.herokuapp.com"
-          },{
             "text": "Github page",
             "url": "https://github.com/174n/inlineweb",
             "icon": "github"
@@ -198,86 +206,6 @@
             "text": "Github page",
             "url": "https://github.com/174n/OpenTabletop",
             "icon": "github"
-        }]
-      },
-
-      {
-        "images": [{
-          "name": "dpopmap"
-        }],
-        "tags": ["frontend", "responsive", "landing page", "webpack"],
-        "title": "Business course website at the Moscow Association of Entrepreneurs",
-        "description": "A landing-page where people can view course information, how to get there and sign up for a course.<br>This website is fully responsive and mobile-friendly.",
-        "links": []
-      },
-      {
-        "images": [{
-          "name": "goodveterinar"
-        }],
-        "tags": ["frontend", "responsive", "landing page", "webpack"],
-        "title": "Online veterinary consultation",
-        "description": "A site where people can get a vet consultation. The first free consultation is carried out directly on the site, using a third-party widget<br>This website is fully responsive and mobile-friendly.",
-        "links": []
-      },
-      {
-        "images": [{
-          "name": "ytlisten"
-        }],
-        "tags": ["frontend", "vue.js", "responsive", "web app"],
-        "title": "Web App for listening to youtube videos",
-        "description": "You can listen music or podcasts from youtube with this web app. See animated demonstration of this in the link below",
-        "links": [{
-          "text": "Github page",
-          "url": "https://github.com/174n/YTListen",
-          "icon": "github"
-        }]
-      },
-      {
-        "images": [{
-          "name": "business_school"
-        },{
-          "name": "business_school2"
-        },{
-          "name": "business_school3"
-        },{
-          "name": "business_school4"
-        }],
-        "tags": ["design", "markup", "photoshop"],
-        "title": "Design of leaflets for a business school",
-        "description": "Two sided leaflets made for a business school at the Moscow Association of Entrepreneurs. The design of the leaflets had to be matched with the design of the site.",
-        "shortPreview": true,
-        "links": []
-      },
-      {
-        "images": [{
-          "name": "web_agency4"
-        },{
-          "name": "web_agency2"
-        },{
-          "name": "web_agency3"
-        },{
-          "name": "web_agency"
-        }],
-        "tags": ["design", "markup", "photoshop"],
-        "title": "Design of leaflets for a web-design agency",
-        "description": "Two sided leaflets made for a web-design agency located in russia. The design of the leaflets had to be matched with the design of the site.",
-        "shortPreview": true,
-        "links": []
-      },
-      {
-        "images": [{
-          "name": "portfolio"
-        }],
-        "tags": ["frontend","responsive","javascript","sass","webpack"],
-        "title": "Personal Portfolio / CV / Resume Website",
-        "description": "This is a fully responsive one-page personal portfolio Website with modern & clean design. This website is fully responsive and mobile-friendly.",
-        "links": [{
-          "text": "Visit this project",
-          "url": "http://alexandrov.online"
-        },{
-          "text": "Github Page",
-          "url": "https://github.com/174n/Portfolio",
-          "icon": "github"
         }]
       }
     ]

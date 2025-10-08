@@ -41,7 +41,7 @@ workSelektors.forEach(input => {
       let tag = e.target.value;
       works.
         forEach(work => {
-          let tags = work.getAttribute("data-tags").split(",");
+          let tags = JSON.parse(work.getAttribute("data-tags"));
           if(tags.includes(tag) || tag === "all") {
             work.classList.remove("hidden");
           } else {

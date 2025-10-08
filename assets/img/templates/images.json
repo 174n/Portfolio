@@ -4,6 +4,10 @@
       {
         "size": 1440,
         "src": "bg.jpg"
+      },
+      {
+        "size": 1024,
+        "src": "skills.png"
       }
     ]
   },
@@ -42,18 +46,6 @@
       }
     ],
     "files": [
-      "works/portfolio.png",
-      "works/ytlisten.png",
-      "works/business_school.png",
-      "works/business_school2.png",
-      "works/business_school3.png",
-      "works/business_school4.png",
-      "works/web_agency.png",
-      "works/web_agency2.png",
-      "works/web_agency3.png",
-      "works/web_agency4.png",
-      "works/dpopmap.png",
-      "works/goodveterinar.png",
       "works/inlineweb.png",
       "works/inlineweb2.png",
       "works/inlineweb3.png",

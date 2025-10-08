@@ -53,8 +53,8 @@
       </div>
       <nav class="nav" role="navigation">
         <each loop="item in data.menu">
-          <a href="#{{ item }}" class="link" >
-            {{ item }}
+          <a href="{{ item.link }}" class="link" >
+            {{ item.title }}
           </a>
         </each>
       </nav>
@@ -138,38 +138,23 @@
 
         <section id="skills" data-aos="fade-up">
           <h2 data-aos="fade-in" data-aos-delay="300" data-aos-duration="500">Professional Skills</h2>
-          <each loop="skill in data.skills">
-            <div class="skills">
-              <div
-                class="header"
-                data-aos="fade-up"
-                data-aos-delay="150"
-                data-aos-offset="70">
-                <h3>{{ skill.title }}</h3>
-              </div>
-              <div
-                class="category"
-                data-aos="zoom-out-up"
-                data-aos-offset="70"
-                data-aos-delay="300">
-                  <each loop="singleSkill in skill.skills">
-                    <div class="skill">
-                      <div class="icon">
-                        <svg viewBox="0 0 100 100" class="icon shape-codepen">
-                          <use xlink:href="/images/sprite.svg#{{ singleSkill.icon }}"></use>
-                        </svg>
-                      </div>
-                      <div class="title">{{ singleSkill.title }}</div>
-                    </div>
-                  </each>
-              </div>
-            </div>
-          </each>
+          <div class="image">
+            <picture>
+              <noscript>
+                <img src="/images/skills.jpg" alt="Skills">
+              </noscript>
+              <!--[if IE 9]><video style="display: none;><![endif]-->
+              <source data-srcset="/images/skills.webp 1x" type="image/webp" srcset="/images/skills.webp 1x">
+              <source data-srcset="/images/skills.jpg 1x" type="image/jpeg" srcset="/images/skills.jpg 1x">
+              <!--[if IE 9]></video><![endif]-->
+              <img width="100%" class="lazyload lazyloaded" data-src="/images/skills.jpg" alt="Skills" src="/images/skills.jpg">
+            </picture>
+          </div>
         </section>
 
-        <section id="experience" data-aos="fade-up">
+        <section id="opensource" data-aos="fade-up">
           <h2 data-aos="fade-in" data-aos-delay="300" data-aos-duration="500">
-            Experience
+            Open Source Projects
           </h2>
           <div class="groups no-js" data-aos="fade-up" data-aos-delay="400">
             <form id="switch-groups">
@@ -201,6 +186,9 @@
                 </div>
               </div>
             </each>
+            <a class="github-button" href="{{ data.socials[1].url }}" target="_blank">
+              More on github
+            </a>
           </div>
         </section>
 
@@ -267,7 +255,9 @@
                 </each>
                 <each loop="image in work.images">
                   <div class="image">
-                    {{{ picture("/images/works/"+image.name, image.title, "png" ) }}}
+                    <a href="images/works/{{image.name}}@2x.png" target="_blank">
+                      {{{ picture("/images/works/"+image.name, image.title, "png" ) }}}
+                    </a>
                   </div>
                   <if condition="image.title">
                     <div class="title">{{ image.title }}</div>
