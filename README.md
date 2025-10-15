@@ -4,6 +4,6 @@ Visit the website: [alexandrov.online](http://alexandrov.online)
 
 ## ABOUT ME
 
-Hello, I'm Ivan Alexandrov. I spend considerable time learning new and cutting-edge web technologies and developing websites. Over the years I have learned a lot about web development and design, so you can be sure that the websites I create will be professional, modern and useful for your clients.
+Hi — I’m Ivan Alexandrov, a software developer. I started as a freelance developer before completing a bachelor’s degree in computer science in Stuttgart; during my studies I was a working student, contributing to the development of enterprise software. I focus on building reliable, maintainable software and currently work on modeling software for an enterprise product. I enjoy solving engineering challenges to develop reliable, production-ready solutions.
 
-Ready to offer my expertise! Feel free to get in touch for an initial consultation.
+Feel free to connect on LinkedIn if you’d like to discuss professional opportunities or collaborations.
