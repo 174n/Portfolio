@@ -193,8 +193,8 @@
       "items": [
         {
           "icon": "redis",
-          "name": "Redis, MySQL, MSSQL, SQLite`",
-          "description": "Experience with relational (MySQL) and in-memory stores.",
+          "name": "Redis, MySQL, MSSQL, SQLite",
+          "description": "Experience with relational databases and in-memory stores.",
           "progress": 65
         },
         {

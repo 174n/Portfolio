@@ -579,9 +579,13 @@ section {
   .skill-category {
     padding: 24px;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 6px 0px inset;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: calc(50% - 12px);
+
+    @include mq($until: desktop) {
+      width: 100%;
+    }
 
     &:hover {
       transform: translateY(-5px);
