@@ -2,10 +2,10 @@ $main_font: 'Montserrat';
 $main_color: #e1e9f4;
 $main_color_text: #292b2c;
 $hero_bg: url('/images/bg.jpg');
-$shadow: 0 0 30px 0px rgba(0,0,0,.15);
+$shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;;
 
-@function main_gradient($degree:135deg) {
-  @return linear-gradient($degree, #f5f7fa 0%, #c3cfe2 100%)
+@function main_gradient($degree: 135deg, $darken: 0%) {
+  @return linear-gradient($degree, darken(#f5f7fa, $darken) 0%, darken(#c3cfe2, $darken) 100%)
 }
 
 @mixin imageloader() {
@@ -38,9 +38,11 @@ body {
   color: $main_color_text;
   line-height: 1.5;
   font-weight: 300;
+
   .loading {
     animation: fadeIn 1.57s cubic-bezier(0.42, 0, 0.86, 0.46) forwards;
   }
+
   &.noscroll {
     overflow: hidden;
   }
@@ -50,28 +52,38 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
-h1, h2 {
+h1,
+h2 {
   font-size: 40px;
   text-transform: uppercase;
   margin-bottom: 30px;
+
   @include mq($until: tablet) {
     font-size: 20px;
     text-align: center;
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
 }
 
-a, a:visited {
+a,
+a:visited {
   color: #0275d8;
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
   }
@@ -83,22 +95,27 @@ a, a:visited {
   @include mq($until: tablet) {
     width: 100%;
   }
+
   @include mq($from: tablet) {
     width: 720px;
   }
+
   @include mq($from: desktop) {
     width: 960px;
   }
+
   @include mq($from: wide) {
     width: 1170px;
     padding-right: 15px;
     padding-left: 15px;
   }
+
   margin: 0 auto;
 }
 
 #page {
   margin-top: 17%;
+
   div {
     padding: 0;
   }
@@ -107,16 +124,17 @@ a, a:visited {
 section {
   background-color: #fff;
   box-shadow: $shadow;
+  border-radius: 12px;
 
   @include mq($from: desktop) {
     margin-left: 40px;
   }
-
 }
 
 .row {
   display: flex;
   justify-content: space-between;
+
   @include mq($until: desktop) {
     flex-direction: column;
   }
@@ -126,28 +144,39 @@ section {
   opacity: 0;
   transition: all 300ms ease-in-out;
 }
+
 .lazyloaded {
   animation: fadein 1s cubic-bezier(0.76, 0.19, 0.66, 0.93);
   opacity: 1;
 }
+
 @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .video {
   width: 100%;
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
+  /* 16:9 */
   padding-top: 25px;
   height: 0;
   background-color: #000;
   margin-bottom: 10px;
   cursor: pointer;
+
   .hidden {
     display: none !important;
   }
-  img, iframe {
+
+  img,
+  iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -155,6 +184,7 @@ section {
     height: 100%;
     border: none;
   }
+
   button {
     position: absolute;
     top: 50%;
@@ -167,19 +197,23 @@ section {
     outline: none;
     display: none;
     cursor: pointer;
+
     &.initialized {
       display: block;
     }
+
     svg path {
       &:first-child {
         fill: #212121;
         fill-opacity: 0.8;
       }
+
       &:last-child {
         fill: #ffffff;
       }
     }
   }
+
   &:hover {
     svg path:first-child {
       fill: #ff0000;
@@ -194,11 +228,13 @@ section {
 //============================
 
 #header {
-  &.scrolling, &.no-js {
+  &.scrolling,
+  &.no-js {
     background-color: $main_color;
     background-image: main_gradient();
     box-shadow: $shadow;
   }
+
   overflow: hidden;
   height: 70px;
   position: fixed;
@@ -206,18 +242,22 @@ section {
   top: 0;
   width: 100%;
   width: 100vw;
+
   .row {
     height: 100%;
   }
+
   #logo {
     height: 70px;
     padding-left: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
+
     img {
       width: 295px;
     }
+
     @include mq($until: desktop) {
       padding: 0;
     }
@@ -229,6 +269,7 @@ section {
     justify-content: flex-end;
     padding-left: 15px;
     padding-right: 45px;
+
     @include mq($until: desktop) {
       display: none;
     }
@@ -240,20 +281,25 @@ section {
       height: 100%;
       font-weight: 800;
       font-size: 15px;
-      color: rgba(0,0,0,.8);
+      color: rgba(0, 0, 0, .8);
       text-transform: uppercase;
-      &:link, &:visited, &:active {
+
+      &:link,
+      &:visited,
+      &:active {
         text-decoration: none;
       }
+
       &:hover {
         text-decoration: none;
-        background-color: rgba(248,253,259,.5);
+        background-color: rgba(248, 253, 259, .5);
         color: #555;
       }
     }
 
   }
 }
+
 #footer {
   margin-top: 70px;
   background-color: $main_color;
@@ -264,9 +310,11 @@ section {
   background-attachment: fixed;
   height: 350px;
   position: relative;
+
   @include mq($until: tablet) {
     height: 200px;
   }
+
   .copy {
     position: absolute;
     bottom: 10px;
@@ -283,19 +331,24 @@ section {
 #page.row {
   display: flex;
   justify-content: space-between;
+
   .profile-wrapper {
     width: 25%;
+
     @include mq($until: desktop) {
       width: 100%;
     }
   }
+
   #main {
     width: 75%;
+
     @include mq($until: desktop) {
       width: 100%;
     }
   }
 }
+
 .landing-image {
   position: absolute;
   top: 0;
@@ -320,13 +373,18 @@ section {
 #profile {
   background-color: #fff;
   margin-bottom: 30px;
-  box-shadow: 0 0 18px 0px rgba(0,0,0,.3);
+  box-shadow: $shadow;
+  border-radius: 12px;
+  overflow: hidden;
+
   @include mq($until: desktop) {
     margin: 60px 15px;
   }
+
   @include mq($from: wide) {
     position: relative;
   }
+
   .colorized {
     display: flex;
     flex-direction: column;
@@ -338,9 +396,11 @@ section {
 
     .photo {
       text-align: center;
+
       img {
         display: none;
       }
+
       img[src] {
         display: block;
         width: 200px;
@@ -348,6 +408,7 @@ section {
         border-radius: 50%;
       }
     }
+
     .name {
       margin-top: 20px;
       margin-bottom: 5px;
@@ -355,26 +416,32 @@ section {
       font-size: 25px;
       text-align: center;
       line-height: 30px;
+
       @include mq($from: wide) {
         font-size: 23px;
       }
+
       @include mq($from: desktop, $until: wide) {
         font-size: 20px;
       }
     }
+
     .description {
       font-size: 25px;
       font-size: 15px;
       color: #555;
     }
+
     .social {
       width: 100%;
       display: flex;
       justify-content: center;
+
       a {
         color: #333;
         padding: 15px;
         margin-top: 5px;
+
         &:hover {
           text-decoration: none;
           color: #777;
@@ -382,12 +449,14 @@ section {
       }
     }
   }
+
   .resume {
     display: flex;
     text-transform: uppercase;
     justify-content: center;
     align-items: center;
     height: 90px;
+
     .resume-btn {
       background-color: #333;
       padding: 15px 30px;
@@ -395,15 +464,18 @@ section {
       display: block;
       color: #fff;
       text-align: center;
+
       &:hover {
         text-decoration: none;
         background-color: #555;
       }
+
       @include mq($from: tablet) {
         text-decoration: none;
         font-size: 17px;
         width: 100%;
         margin: 15px;
+
         &:hover {
           letter-spacing: 2px;
         }
@@ -418,36 +490,44 @@ section {
 #about {
   margin-bottom: 30px;
   padding: 40px;
+
   .aboutme {
     letter-spacing: .8px;
     word-spacing: 2px;
   }
+
   .line {
     height: 1px;
     width: 100%;
-    background-color: rgba(0,0,0,.1);
-    box-shadow: 0 0 10px 0px rgba(0,0,0,.1);
+    background-color: rgba(0, 0, 0, .1);
+    box-shadow: 0 0 10px 0px rgba(0, 0, 0, .1);
     margin: 50px 0;
   }
+
   .info {
     .row {
       margin: 15px;
+
       @include mq($from: tablet, $until: desktop) {
         flex-direction: row;
         text-align: center;
       }
     }
+
     .column {
       width: 100%;
+
       h3 {
         font-weight: 800;
         text-transform: uppercase;
         letter-spacing: 2px;
         word-spacing: 4px;
+
         @include mq($from: desktop) {
           font-size: 20px;
           margin-bottom: 30px;
         }
+
         @include mq($until: desktop) {
           text-align: center;
           font-size: 15px;
@@ -455,8 +535,10 @@ section {
         }
 
       }
+
       .text {
         margin-bottom: 5px;
+
         .personal-field {
           font-weight: 800;
         }
@@ -467,6 +549,7 @@ section {
       .column:last-child {
         padding-left: 30px;
       }
+
       .column:first-child {
         padding-right: 30px;
       }
@@ -481,46 +564,88 @@ section {
 #skills {
   margin-top: 70px;
   padding: 50px;
+
   h2 {
     text-align: center;
   }
-  .skills {
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .skill-category {
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: calc(50% - 12px);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
     h3 {
-      font-size: 22px;
-      letter-spacing: 3px;
-      margin-top: 40px;
-      @media (max-width: 768px) {
-        font-size: 18px;
-        text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+  }
+
+  .skill-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    flex-wrap: wrap;
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .skill-icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      object-fit: contain;
+    }
+
+    .skill-info {
+      flex: 1;
+
+      .skill-name {
+        font-weight: 600;
+        color: #1e293b;
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+      }
+
+      .skill-desc {
+        color: #3b3b3b;
+        line-height: 1.4;
       }
     }
-    .category {
-      display: flex;
-      flex-wrap: wrap;
-      @supports not (flex-wrap: wrap) {
-        display: block;
-        text-align: center;
-      }
-      .skill {
-        @supports not (flex-wrap: wrap) {
-          display: inline-block;
-        }
-        padding: 20px;
-        flex-grow: 1;
-        user-select: none;
-        div {
-          text-align: center;
-        }
-        .title {
-          font-size: 15px;
-          letter-spacing: .8px;
-        }
-        .icon {
-          height: 80px;
-          svg {
-            width: 70px;
-          }
-        }
+
+    .progress {
+      height: 6px;
+      background: #f3f3f3;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 8px;
+      width: 100%;
+
+      .progress-bar {
+        height: 100%;
+        background: main_gradient(195deg, 10%);
+        border-radius: 3px;
+        width: 0;
+        transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
       }
     }
   }
@@ -534,11 +659,13 @@ section {
   margin-top: 70px;
   padding: 50px;
   text-align: center;
+
   .row {
     @include mq($from: tablet) {
       flex-direction: row;
     }
   }
+
   .groups {
     border: solid 1px #bbb;
     display: inline-block;
@@ -546,6 +673,7 @@ section {
     margin-top: 10px;
     margin-bottom: 15px;
     border-radius: 15px;
+
     @include mq($until: tablet) {
       display: block;
     }
@@ -554,7 +682,7 @@ section {
       display: none;
     }
 
-    input[type=radio]{
+    input[type=radio] {
       position: absolute;
       visibility: hidden;
       display: none;
@@ -573,29 +701,36 @@ section {
       margin-left: -5px;
       user-select: none;
       display: inline-block;
-      &:hover, &:focus {
+
+      &:hover,
+      &:focus {
         background-color: #e5e5e5;
       }
+
       @include mq($until: tablet) {
         display: block;
       }
+
       @include mq($until: wide) {
         padding: 10px 30px;
       }
     }
 
-    input[type=radio]:checked + label {
+    input[type=radio]:checked+label {
       color: #333;
       background: #fff;
-      &:hover, &:focus {
+
+      &:hover,
+      &:focus {
         background-color: $main_color;
       }
     }
 
-    label + input[type=radio] + label {
+    label+input[type=radio]+label {
       border-left: solid 1px #bbb;
     }
   }
+
   .works {
     user-select: none;
     flex-wrap: wrap;
@@ -607,18 +742,23 @@ section {
     @include mq($until: tablet) {
       margin-top: 60px;
     }
+
     .work {
       width: 50%;
+
       @supports not (flex-wrap: wrap) {
         display: inline-block;
         width: 47%;
       }
+
       padding: 10px;
       outline: none;
       transition: all 300ms ease-in-out;
+
       @include mq($until: tablet) {
         width: 100%;
       }
+
       &.hidden {
         visibility: hidden;
         margin: 0;
@@ -627,15 +767,18 @@ section {
         width: 0;
         height: 0;
       }
+
       .work-wrapper {
         position: relative;
         overflow: hidden;
         width: 99%;
         height: 100%;
-        box-shadow: 0 0 10px 0px rgba(0,0,0,.2);
+        box-shadow: 0 0 10px 0px rgba(0, 0, 0, .2);
         height: 275px;
-        & > a {
+
+        &>a {
           display: none;
+
           &.no-js {
             display: block;
             position: absolute;
@@ -647,9 +790,11 @@ section {
           }
         }
       }
+
       .image {
         @include imageloader();
         height: 100%;
+
         img {
           width: 100%;
           position: absolute;
@@ -659,25 +804,30 @@ section {
           object-fit: cover;
         }
       }
-      &:hover, &:focus {
+
+      &:hover,
+      &:focus {
         .overlay {
           visibility: visible;
           opacity: 1;
+
           .title {
             bottom: 0%;
           }
         }
+
         .image img {
           top: -100%;
         }
       }
+
       .overlay {
         height: 100%;
         width: 100%;
         position: absolute;
         top: 0;
         left: 0;
-        background-color: rgba(255, 255, 255,.3);
+        background-color: rgba(255, 255, 255, .3);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -685,6 +835,7 @@ section {
         cursor: pointer;
         visibility: hidden;
         opacity: 0;
+
         .title {
           position: absolute;
           letter-spacing: 1px;
@@ -706,7 +857,9 @@ section {
           left: 50%;
           transform: translateX(-50%);
         }
-        &:hover .image img, &:focus .image img {
+
+        &:hover .image img,
+        &:focus .image img {
           top: 0;
         }
       }
@@ -725,6 +878,7 @@ section {
     text-decoration: none;
     font-weight: 800;
     text-transform: uppercase;
+
     &:hover {
       background-color: #D0D8E3;
       letter-spacing: 5px;
@@ -739,25 +893,32 @@ section {
 #contact {
   margin-top: 70px;
   padding: 50px;
+
   h2 {
     margin-bottom: 20px;
   }
+
   .contact {
     .row {
-      & > * {
+      &>* {
         width: 100%;
       }
+
       margin: 0;
       margin-top: 15px;
     }
+
     .text {
       font-size: 18px;
       letter-spacing: .8px;
     }
+
     .contact-form {
       .input-field {
         margin-bottom: 10px;
-        input, textarea {
+
+        input,
+        textarea {
           border: 0;
           font-family: 'Montserrat', sans-serif;
           font-size: 18px;
@@ -766,15 +927,17 @@ section {
           resize: none;
           background-color: #eee;
         }
-        input[type="submit"]{
+
+        input[type="submit"] {
           padding: 15px;
           cursor: pointer;
           background-color: $main_color;
           font-weight: 800;
           font-size: 18px;
-          color: rgba(0,0,0,.8);
+          color: rgba(0, 0, 0, .8);
           text-transform: uppercase;
           letter-spacing: 2px;
+
           &:hover {
             background-color: #D0D8E3;
             letter-spacing: 5px;
@@ -799,7 +962,7 @@ section {
   align-items: center;
   position: fixed;
   padding: 8vh 0;
-  background-color: rgba(0,0,0,.6);
+  background-color: rgba(0, 0, 0, .6);
   height: 100%;
   overflow-y: auto;
   top: 0;
@@ -807,6 +970,7 @@ section {
   &.show {
     visibility: visible;
     opacity: 1;
+
     .modal-wrapper {
       transform: translateY(0);
     }
@@ -821,12 +985,16 @@ section {
     padding: 10px 15px;
     color: #ccc;
     cursor: pointer;
-    &:hover, &:focus {
+
+    &:hover,
+    &:focus {
       color: #fff;
     }
+
     @include mq($from: desktop) {
       margin-right: 30px;
     }
+
     @include mq($until: tablet) {
       position: relative;
       text-align: center;
@@ -849,6 +1017,7 @@ section {
       @include mq($until: tablet) {
         flex-direction: column-reverse;
       }
+
       @include mq($from: tablet) {
         flex-direction: row;
       }
@@ -857,17 +1026,21 @@ section {
     .screenshot {
       width: 66%;
       margin-right: 15px;
+
       .image {
         @include imageloader();
         margin-bottom: 6px;
       }
+
       @include mq($until: tablet) {
         width: 100%;
       }
+
       img {
         width: 100%;
         margin-bottom: -6px;
       }
+
       .title {
         margin-bottom: 20px;
         font-size: .8em;
@@ -875,12 +1048,15 @@ section {
         text-align: center;
       }
     }
+
     .sidebar {
       width: 33%;
       margin: 0 15px;
+
       @include mq($until: tablet) {
         width: 100%;
       }
+
       .title {
         font-size: 21px;
         font-weight: 800;
@@ -888,12 +1064,15 @@ section {
         line-height: 23px;
         margin-bottom: 20px;
       }
+
       .description {
         color: #555;
         margin-bottom: 20px;
       }
+
       .link {
         width: 100%;
+
         .link-btn {
           display: flex;
           align-items: center;
@@ -907,20 +1086,24 @@ section {
           text-transform: uppercase;
           font-size: 15px;
           margin-bottom: 10px;
+
           &:hover {
             background-color: #ccc;
             text-decoration: none;
           }
+
           @include mq($until: tablet) {
             padding: 10px;
           }
         }
       }
+
       .tags {
         display: flex;
         flex-wrap: wrap;
         margin-left: -5px;
         margin-top: 15px;
+
         .tag {
           background-color: #333;
           color: #fff;
@@ -932,6 +1115,7 @@ section {
           font-weight: 800;
           text-transform: capitalize;
         }
+
         margin-bottom: 20px;
       }
     }

@@ -53,7 +53,7 @@
       </div>
       <nav class="nav" role="navigation">
         <each loop="item in data.menu">
-          <a href="{{ item.link }}" class="link" >
+          <a href="{{ item.link }}" class="link">
             {{ item.title }}
           </a>
         </each>
@@ -95,11 +95,7 @@
           <h1 data-aos="fade-in" data-aos-delay="300" data-aos-duration="500">
             {{ data.about.header }}
           </h1>
-          <div
-            class="aboutme"
-            data-aos="fade-in"
-            data-aos-delay="600"
-            data-aos-duration="500">
+          <div class="aboutme" data-aos="fade-in" data-aos-delay="600" data-aos-duration="500">
             {{{ data.about.text }}}
           </div>
           <div class="line"></div>
@@ -137,18 +133,26 @@
         </section>
 
         <section id="skills" data-aos="fade-up">
-          <h2 data-aos="fade-in" data-aos-delay="300" data-aos-duration="500">Professional Skills</h2>
-          <div class="image">
-            <picture>
-              <noscript>
-                <img src="/images/skills.jpg" alt="Skills">
-              </noscript>
-              <!--[if IE 9]><video style="display: none;><![endif]-->
-              <source data-srcset="/images/skills.webp 1x" type="image/webp" srcset="/images/skills.webp 1x">
-              <source data-srcset="/images/skills.jpg 1x" type="image/jpeg" srcset="/images/skills.jpg 1x">
-              <!--[if IE 9]></video><![endif]-->
-              <img width="100%" class="lazyload lazyloaded" data-src="/images/skills.jpg" alt="Skills" src="/images/skills.jpg">
-            </picture>
+          <h2 data-aos="fade-in" data-aos-delay="300" data-aos-duration="500">Skills</h2>
+
+          <div class="skills-grid">
+            <each loop="category in data.skills">
+              <div class="skill-category" data-aos="zoom-out-up" data-aos-offset="70" data-aos-delay="300">
+                <h3>{{ category.name }}</h3>
+                <each loop="skill in category.items">
+                  <div class="skill-item">
+                    <svg viewBox="0 0 100 100" class="skill-icon">
+                      <use xlink:href="/images/devicons.svg#{{ skill.icon }}"></use>
+                    </svg>
+                    <div class="skill-info">
+                      <div class="skill-name">{{ skill.name }}</div>
+                      <div class="skill-desc">{{ skill.description }}</div>
+                    </div>
+                    <div class="progress"><div class="progress-bar" style="width: {{ skill.progress }}%"></div></div>
+                  </div>
+                </each>
+              </div>
+            </each>
           </div>
         </section>
 
@@ -168,11 +172,8 @@
           </div>
           <div class="works row">
             <each loop="work, i in data.experience.works">
-              <div
-                class="work {{ work.shortPreview ? 'short' : '' }}"
-                data-tags="{{ work.tags }}"
-                data-id="{{ i }}" tabindex="0"
-              >
+              <div class="work {{ work.shortPreview ? 'short' : '' }}" data-tags="{{ work.tags }}" data-id="{{ i }}"
+                tabindex="0">
                 <div class="work-wrapper" data-aos="zoom-in" data-aos-delay="{{ 50*i }}">
                   <a href="{{ getWorkLink(work) }}" target="_blank" class="no-js" tabindex="0"></a>
                   <div class="image">
@@ -199,7 +200,8 @@
               <div class="text" data-aos-delay="200">{{ data.contact.text }}</div>
             </div>
             <div class="row">
-              <form action="https://formspree.io/ivan@alexandrov.online" method="POST" class="contact-form" data-aos="flip-left" data-aos-delay="400">
+              <form action="https://formspree.io/ivan@alexandrov.online" method="POST" class="contact-form"
+                data-aos="flip-left" data-aos-delay="400">
                 <div class="input-field">
                   <input type="text" name="name" placeholder="Name" title="Name">
                 </div>
@@ -245,11 +247,16 @@
                     <a href="https://youtu.be/{{ vid.id }}" target="_blank">
                       <picture>
                         <source srcset="https://i.ytimg.com/vi_webp/{{ vid.id }}/maxresdefault.webp" type="image/webp">
-                        <img src="https://i.ytimg.com/vi/{{ vid.id }}/maxresdefault.jpg" alt="{{ vid.title || 'video'}}">
+                        <img src="https://i.ytimg.com/vi/{{ vid.id }}/maxresdefault.jpg"
+                          alt="{{ vid.title || 'video'}}">
                       </picture>
                     </a>
                     <button aria-label="Play video">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="68" height="48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z"/><path d="M45 24L27 14v20"/></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="68" height="48">
+                        <path
+                          d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" />
+                        <path d="M45 24L27 14v20" />
+                      </svg>
                     </button>
                   </div>
                 </each>
@@ -271,7 +278,7 @@
                   <each loop="link in work.links">
                     <a href="{{ link.url }}" class="link-btn" target="_blank">
                       <i class="fa fa-{{ link.icon || 'link'}} fa-2x" aria-hidden="true"></i>
-                       <span class="link-text">{{ link.text }}</span>
+                      <span class="link-text">{{ link.text }}</span>
                     </a>
                   </each>
                 </div>
@@ -288,7 +295,7 @@
     </div>
   </each>
 
-<script data-goatcounter="https://alexandrov.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <script data-goatcounter="https://alexandrov.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script>
   var imgs = document.getElementsByClassName("lazyload");
   for (var i = 0; i < imgs.length; i++) {

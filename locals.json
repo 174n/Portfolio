@@ -1,6 +1,15 @@
 {
-  "icons": ["72","96","128","144","152","192","384","512"],
-  "menu":[
+  "icons": [
+    "72",
+    "96",
+    "128",
+    "144",
+    "152",
+    "192",
+    "384",
+    "512"
+  ],
+  "menu": [
     {
       "title": "About",
       "link": "#about"
@@ -28,7 +37,7 @@
     "title": "Get in touch",
     "url": "#contact"
   },
-  "socials":[
+  "socials": [
     {
       "icon": "envelope",
       "url": "mailto:ivan@alexandrov.online",
@@ -50,11 +59,11 @@
       "label": "My LinkedIn profile"
     }
   ],
-  "about":{
+  "about": {
     "header": "About me",
     "text": "<p>Hi — I’m Ivan Alexandrov, a software developer. I started as a freelance developer before completing a bachelor’s degree in computer science in Stuttgart; during my studies I was a working student, contributing to the development of enterprise software. I focus on building reliable, maintainable software and currently work on modeling software for an enterprise product. I enjoy solving engineering challenges to develop reliable, production-ready solutions.</p><p>Feel free to connect on LinkedIn or use the contact form if you’d like to discuss professional opportunities or collaborations.</p>",
     "infoTitle": "General Information",
-    "info":[
+    "info": [
       {
         "title": "Email",
         "content": "ivan@alexandrov.online",
@@ -65,7 +74,7 @@
         "content": "Currently not available"
       }
     ],
-    "languages":[
+    "languages": [
       {
         "title": "Russian",
         "content": "Native"
@@ -80,133 +89,233 @@
       }
     ]
   },
-  "skills":[
+  "skills": [
     {
-      "title": "Frontend",
-      "skills": [
+      "name": "Languages",
+      "items": [
         {
-          "icon": "vuejs-original",
-          "title": "Vue.js"
+          "icon": "typescript",
+          "name": "TypeScript & JavaScript",
+          "description": "Primary language for professional, full-stack development.",
+          "progress": 95
         },
         {
-          "icon": "javascript-original",
-          "title": "JavaScript / ES 2018"
+          "icon": "java",
+          "name": "Java",
+          "description": "Extensive academic experience",
+          "progress": 65
         },
         {
-          "icon": "html5-original",
-          "title": "HTML5"
+          "icon": "go",
+          "name": "Go (Golang)",
+          "description": "Self-directed experience building high-performance backend services.",
+          "progress": 80
         },
         {
-          "icon": "sass-original",
-          "title": "CSS / SASS"
+          "icon": "php",
+          "name": "PHP",
+          "description": "Freelance experience developing custom backend solutions.",
+          "progress": 60
         }
       ]
     },
     {
-      "title": "Backend",
-      "skills": [
+      "name": "Frameworks & Libraries",
+      "items": [
         {
-          "icon": "php-plain",
-          "title": "PHP"
+          "icon": "vuejs",
+          "name": "Vue.js",
+          "description": "Primary frontend stack, from private projects to enterprise applications.",
+          "progress": 95
         },
         {
-          "icon": "laravel-plain",
-          "title": "Laravel"
+          "icon": "react",
+          "name": "React",
+          "description": "Maintaining and refactoring production-level React applications.",
+          "progress": 75
         },
         {
-          "icon": "nodejs-plain",
-          "title": "Node.js"
+          "icon": "solidjs",
+          "name": "SolidJS",
+          "description": "Used in a couple of pet projects",
+          "progress": 65
         },
         {
-          "icon": "express-original",
-          "title": "Express.js"
-        },
-        {
-          "icon": "firebase",
-          "title": "Firebase"
+          "icon": "dotnetcore",
+          "name": ".NET / C#",
+          "description": "Professional experience building robust backend APIs and services.",
+          "progress": 65
         }
       ]
     },
     {
-      "title": "Tools",
-      "skills": [
+      "name": "Cloud & Containers",
+      "items": [
         {
-          "icon": "photoshop-plain",
-          "title": "Adobe Photoshop"
+          "icon": "azure",
+          "name": "Microsoft Azure",
+          "description": "Professional experience with core Azure services.",
+          "progress": 60
         },
         {
-          "icon": "git-plain",
-          "title": "Git"
+          "icon": "kubernetes",
+          "name": "Kubernetes",
+          "description": "In-depth research on cloud-native networking (Ingress) for Bachelor's thesis.",
+          "progress": 65
         },
         {
-          "icon": "mysql-plain",
-          "title": "MySQL"
+          "icon": "docker",
+          "name": "Docker",
+          "description": "Containerizing applications for consistent local development and deployment.",
+          "progress": 90
+        }
+      ]
+    },
+    {
+      "name": "DevOps & Systems",
+      "items": [
+        {
+          "icon": "linux",
+          "name": "Linux",
+          "description": "Extensive hands-on experience in Linux server administration (private projects).",
+          "progress": 90
         },
         {
-          "icon": "linux-original",
-          "title": "Linux"
+          "icon": "cloud",
+          "name": "Self-Hosting & Deployment",
+          "description": "Managing end-to-end deployment and hosting for personal projects.",
+          "progress": 85
+        }
+      ]
+    },
+    {
+      "name": "Databases & Backend",
+      "items": [
+        {
+          "icon": "redis",
+          "name": "Redis, MySQL, MSSQL, SQLite`",
+          "description": "Experience with relational (MySQL) and in-memory stores.",
+          "progress": 65
+        },
+        {
+          "icon": "azure",
+          "name": "Cosmos DB",
+          "description": "NoSQL (working student project)",
+          "progress": 50
+        }
+      ]
+    },
+    {
+      "name": "Tools & Methods",
+      "items": [
+        {
+          "icon": "git",
+          "name": "Git",
+          "description": "Proficient in Git workflows, branching, and team collaboration.",
+          "progress": 95
+        },
+        {
+          "icon": "team",
+          "name": "Agile / Scrum",
+          "description": "Working within professional Agile/Scrum teams to deliver features.",
+          "progress": 75
+        },
+        {
+          "icon": "markdown",
+          "name": "LaTeX, Markdown, MS Office",
+          "description": "Creating reports, and academic papers, etc.",
+          "progress": 90
         }
       ]
     }
   ],
-  "experience":{
+  "experience": {
     "tags": [
       "frontend",
       "backend"
     ],
-    "works":[
+    "works": [
       {
-        "images": [{
-          "name": "inlineweb",
-          "title": "Index page where all projects are displayed"
-        },{
-          "name": "inlineweb2",
-          "title": "Editor page"
-        },{
-          "name": "inlineweb3",
-          "title": "User page"
-        }],
-        "videos": [{
-          "id": "TbT0RxHoWho"
-        },{
-          "id": "8Tn7KwhXK48"
-        }],
-        "tags": ["backend", "frontend", "responsive", "vue.js", "laravel", "jwt"],
+        "images": [
+          {
+            "name": "inlineweb",
+            "title": "Index page where all projects are displayed"
+          },
+          {
+            "name": "inlineweb2",
+            "title": "Editor page"
+          },
+          {
+            "name": "inlineweb3",
+            "title": "User page"
+          }
+        ],
+        "videos": [
+          {
+            "id": "TbT0RxHoWho"
+          },
+          {
+            "id": "8Tn7KwhXK48"
+          }
+        ],
+        "tags": [
+          "backend",
+          "frontend",
+          "responsive",
+          "vue.js",
+          "laravel",
+          "jwt"
+        ],
         "title": "InlineWeb: frontend playground",
         "description": "It's like a normal frontend playground, but for <a href=\"http://about.bitty.site\" target=\"_blank\">itty.bitty</a>-like web apps. User's apps don't need to be saved on a server, because all the content will be encoded in the url. URLs up to 4000 bytes can be saved on user's account and accessed through short aliases. <p>Compared to itty.bitty you can use secure local storage through custom functions. Each project's storage is encapsulated and can't be accessed from other projects.</p>",
         "shortPreview": true,
-        "links": [{
+        "links": [
+          {
             "text": "Github page",
             "url": "https://github.com/174n/inlineweb",
             "icon": "github"
-        }]
+          }
+        ]
       },
       {
-        "images": [{
-          "name": "opentabletop",
-          "title": "Gameplay example"
-        },{
-          "name": "opentabletop2",
-          "title": "Lobby settings"
-        },{
-          "name": "opentabletop3",
-          "title": "Adding decks to the tabletop"
-        }],
-        "videos": [{
-          "id": "1SPWN2cHQ_s"
-        }],
-        "tags": ["frontend", "vue.js", "firebase"],
+        "images": [
+          {
+            "name": "opentabletop",
+            "title": "Gameplay example"
+          },
+          {
+            "name": "opentabletop2",
+            "title": "Lobby settings"
+          },
+          {
+            "name": "opentabletop3",
+            "title": "Adding decks to the tabletop"
+          }
+        ],
+        "videos": [
+          {
+            "id": "1SPWN2cHQ_s"
+          }
+        ],
+        "tags": [
+          "frontend",
+          "vue.js",
+          "firebase"
+        ],
         "title": "OpenTabletop: play any tabletop game in browser",
         "description": "Online project based on Vue.js and Firebase in which people can play any board games with friends<p><strong>Features</strong><ul><li>Import/Export lobbies</li><li>In-game chat</li><li>Any type of dices</li><li>Counters</li><li>Lobby customization</li><li>Storage for decks</li></ul></p>",
         "shortPreview": true,
-        "links": [{
+        "links": [
+          {
             "text": "Demo",
             "url": "https://playopentabletop.firebaseapp.com"
-          },{
+          },
+          {
             "text": "Github page",
             "url": "https://github.com/174n/OpenTabletop",
             "icon": "github"
-        }]
+          }
+        ]
       }
     ]
   },
